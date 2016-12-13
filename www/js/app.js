@@ -22,7 +22,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $stateProvider
 
     .state('app', {
@@ -31,21 +31,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
-
-  .state('app.search', {
-    url: '/search',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/search.html'
-      }
-    }
-  })
-
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.feedback', {
+      url: '/feedback',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/feedback.html',
+            controller: 'feedbackCtrl'
         }
       }
     })
@@ -67,7 +58,92 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'PlaylistCtrl'
       }
     }
-  });
+  })
+  .state('app.profile', {
+      url: '/profile',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profile.html',
+            controller: 'profileCtrl'
+        }
+      }
+    })
+  .state('app.paq', {
+      url: '/paq',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/paq.html',
+            controller: 'paqCtrl'
+        }
+      }
+    })
+  .state('app.bookmarks', {
+      url: '/bookmarks',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/bookmarks.html',
+            controller: 'bookmarksCtrl'
+        }
+      }
+    })
+  .state('app.ask', {
+      url: '/ask',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/ask.html',
+            controller: 'askCtrl'
+        }
+      }
+    })
+  .state('app.filter', {
+      url: '/filter',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/filter.html',
+            controller: 'filterCtrl'
+        }
+      }
+    })
+  .state('app.login', {
+      url: '/login',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/login.html',
+            controller: 'loginCtrl'
+        }
+      }
+    })
+  .state('app.standard', {
+      url: '/standard',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/standard.html',
+            controller: 'standardCtrl'
+        }
+      }
+    })
+  .state('app.chatlist', {
+      url: '/chatlist',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/chatlist.html',
+            controller: 'chatlistCtrl'
+        }
+      }
+    })
+  .state('app.chat', {
+      url: '/chat',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/chat.html',
+            controller: 'chatCtrl'
+        }
+      }
+    });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
+    
+    
+$ionicConfigProvider.navBar.alignTitle('center');
+    
 });
