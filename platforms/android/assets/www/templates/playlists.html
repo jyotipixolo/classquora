@@ -1,0 +1,74 @@
+<ion-view view-title="Playlists">
+    <ion-header-bar align-title="left" class="bar-calm primarybg">
+        <div class="buttons">
+            <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="left">
+            </button>
+        </div>
+        <h1 class="title">Questions</h1>
+        <div class="buttons">
+            <button class="button button-icon button-clear icon-drawer-ask-a-questn">
+            </button>
+            <button class="button button-icon button-clear icon-filter">
+            </button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <div class="list">
+
+            <a class="item" href="#" ng-repeat="play in playlists" style="padding: 0px;">
+
+                <div class="row marginbottom0">
+                    <div class="col col-10 textcenter">
+                        <img src="img/teacher.png" width="125%">
+                    </div>
+                    <div class="col col-67">
+                        <h2 class="margin">Teacher Amin</h2>
+                        <span class="timetext">1 hour ago</span>
+                    </div>
+                    <div class="col col">
+                        <h6 class="bluecolor margintop30">Physics</h6>
+                    </div>
+                    <div class="col">
+                        <i class="icon icon-bookmark"></i>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-90 col-offset-10">
+                        <p>What does the fox say ? What does the fox say ? What does the fox say ? What does the fox say ? What does the fox say ?
+                        </p>
+                    </div>
+
+                </div>
+                
+                <div class="row marginbottom0">
+                    <div class="col questionimagediv">
+                        <img src="img/ionic.png" class="questionimage">
+                    </div>
+                </div>
+                <div class="row marginbottom0">
+                    <div class="col col-20 col-offset-67 textcenter paddingbottom0">
+                        <h6 class="answereddiv">Answered</h6>
+                    </div>
+                    <div class="col textcenter paddingbottom0">
+                        <i class="icon icon-un-verified" style="    margin-top: 16%;"></i>
+                    </div>
+                </div>
+
+            </a>
+
+        </div>
+
+        <div class="fixed-action-btn vertical click-to-toggle">
+            <a class="btn-floating btn-large red">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul>
+                <li><a class="btn-floating red"><i class="icon-drawer-ask-a-questn"></i></a>
+                </li>
+                <li><a class="btn-floating yellow darken-1"><i class="icon-filter"></i></a>
+                </li>
+            </ul>
+        </div>
+
+    </ion-content>
+</ion-view>

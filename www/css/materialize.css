@@ -4988,7 +4988,7 @@ small {
   text-align: center;
   color: #fff;
   font-size: 1.6rem;
-  line-height: 40px;
+  line-height: 47px;
 }
 
 .btn-floating:hover {
@@ -5015,7 +5015,7 @@ button.btn-floating {
 .fixed-action-btn {
   position: fixed;
   right: 23px;
-  bottom: 23px;
+  bottom: 95px;
   padding-top: 15px;
   margin-bottom: 0;
   z-index: 998;

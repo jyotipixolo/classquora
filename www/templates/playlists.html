@@ -4,53 +4,57 @@
             <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="left">
             </button>
         </div>
-        <h1 class="title">Questions</h1>
+        <input type="text" class="secondarybg marginbottom0 headersearchbox">
         <div class="buttons">
+            <button class="button button-icon button-clear icon-filter">
+            </button>
             <button class="button button-icon button-clear icon-drawer-ask-a-questn">
             </button>
-            <button class="button button-icon button-clear icon-filter">
+            <button class="button button-icon button-clear icon-chat-icon">
             </button>
         </div>
     </ion-header-bar>
     <ion-content class="has-header">
-        <div class="list">
 
-            <a class="item" href="#" ng-repeat="play in playlists" style="padding: 0px;">
+        <div class="list marginbottom0 questionslist">
 
-                <div class="row" style="margin-bottom: 0px;">
+            <a class="item" href="#" ng-repeat="question in questions" style="padding: 0px;">
+
+                <div class="row marginbottom0">
                     <div class="col col-10 textcenter">
-                        <img src="img/teacher.png" width="125%">
+                        <img src="{{usertypes[question.usertype - 1].image}}" width="125%">
                     </div>
                     <div class="col col-67">
-                        <h2 style="    margin-top: 3%; display: inline-flex;">Teacher Amin</h2>
-                        <span style="    margin-top: 3%;font-size:0.6em">1 hour ago</span>
+                        <h2 class="questionuser">{{question.username}}</h2>
+                        <span class="timetext">1 hour ago</span>
                     </div>
-                    <div class="col col">
-                        <h6 style="    margin-top: 31%;">Physics</h6>
+                    <div class="col questionsubjdiv">
+                        <h6 class="primarycolor questionsubject">{{question.subject}}</h6>
                     </div>
-                    <div class="col">
-                        <i class="icon icon-bookmark" style="    margin-top: 16%;"></i>
+                    <div class="col col-10">
+                        <i class="icon icon-bookmark-active questionbookmark"></i>
+                        <!--class="ion-android-bookmark bluecolor"-->
                     </div>
                 </div>
                 <div class="row">
                     <div class="col col-90 col-offset-10">
-                        <p>What does the fox say ? What does the fox say ? What does the fox say ? What does the fox say ? What does the fox say ?
+                        <p class="normalwhitespace">{{question.question}}
                         </p>
                     </div>
 
                 </div>
-                
+
                 <div class="row marginbottom0">
-                    <div class="col questionimagediv">
-                        <img src="img/ionic.png" class="questionimage">
+                    <div class="col questionimagediv" ng-if="question.image != ''">
+                        <img src="img/{{question.image}}" class="questionimage">
                     </div>
                 </div>
                 <div class="row marginbottom0">
                     <div class="col col-20 col-offset-67 textcenter paddingbottom0">
-                        <h6 class="answereddiv">Answered</h6>
+                        <h6 class="answereddiv" ng-if="question.answers > 0">Answered</h6>
                     </div>
                     <div class="col textcenter paddingbottom0">
-                        <i class="icon icon-un-verified" style="    margin-top: 16%;"></i>
+                        <i class="icon ion-checkmark-circled primarycolor fontsize12" ng-if="question.verified"></i>
                     </div>
                 </div>
 
@@ -58,17 +62,133 @@
 
         </div>
 
-        <div class="fixed-action-btn vertical click-to-toggle">
-            <a class="btn-floating btn-large red">
-                <i class="material-icons">menu</i>
-            </a>
-            <ul>
-                <li><a class="btn-floating red"><i class="icon-drawer-ask-a-questn"></i></a>
-                </li>
-                <li><a class="btn-floating yellow darken-1"><i class="icon-filter"></i></a>
-                </li>
-            </ul>
-        </div>
 
     </ion-content>
+
+
+    <div class="chaptersdiv" ng-if="subjectselect">
+        <ul class="list" style="margin-bottom: 30px;">
+            <li class="item">
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Chapter 1</label>
+                </p>
+            </li>
+            <li class="item">
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Chapter 2</label>
+                </p>
+            </li>
+            <li class="item">
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Chapter 3</label>
+                </p>
+            </li>
+            <li class="item">
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Chapter 4</label>
+                </p>
+            </li>
+            <li class="item">
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Chapter 5</label>
+                </p>
+            </li>
+            <li class="item">
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Chapter 6</label>
+                </p>
+            </li>
+            <li class="item">
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Chapter 7</label>
+                </p>
+            </li>
+            <li class="item">
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Chapter 8</label>
+                </p>
+            </li>
+            <li class="item">
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Chapter 9</label>
+                </p>
+            </li>
+            <li class="item">
+                <p>
+                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                    <label for="filled-in-box">Chapter 10</label>
+                </p>
+            </li>
+
+        </ul>
+        <div class="row chapterbuttons marginbottom0">
+            <div class="col">
+                <a class="waves-effect waves-light btn">All Chapters</a>
+            </div>
+            <div class="col">
+                <a class="waves-effect waves-light btn floatright">OK</a>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="bottomstabs">
+        <div class="row marginbottom0 paddingbottom0 bottomimagestab paddingtop0">
+            <div class="col col-25 textcenter bottomtabimages paddingbottom0">
+                <img src="img/physics-active.png" width="40%">
+
+            </div>
+            <div class="col col-25 textcenter bottomtabimages paddingbottom0">
+                <img src="img/chemistry-active.png" width="40%">
+
+            </div>
+            <div class="col col-25 textcenter bottomtabimages paddingbottom0">
+                <img src="img/biology-active.png" width="40%">
+
+            </div>
+            <div class="col col-25 textcenter bottomtabimages paddingbottom0">
+                <img src="img/maths-active.png" width="40%">
+
+            </div>
+        </div>
+        <div class="row marginbottom0 paddingbottom0">
+            <div class="col col-25 textcenter">
+                <h6>Physics</h6></div>
+            <div class="col col-25 textcenter">
+                <h6>Chemistry</h6></div>
+            <div class="col col-25 textcenter">
+                <h6>Biology</h6></div>
+            <div class="col col-25 textcenter">
+                <h6>Maths</h6></div>
+        </div>
+
+    </div>
+
+    <div class="floatoverlay" ng-class="{'floatoverlaycolor':floatactive}"></div>
+
+    <div id="floatbtn" class="fixed-action-btn vertical click-to-toggle">
+        <a class="btn-floating btn-large primarybg" ng-click="checkoverlay()">
+            <i class="ion-ios-plus-empty fontsize34">menu</i>
+        </a>
+        <ul>
+            <li>
+                <p class="floatinginnerbuttontext">Filter</p> <a class="btn-floating primarybg darken-1"><i class="icon-filter"></i></a>
+            </li>
+            <li>
+                <p class="floatinginnerbuttontext floatinginnerbuttontextask">Ask A Question</p>
+                <a class="btn-floating primarybg"><i class="icon-drawer-ask-a-questn"></i></a>
+
+            </li>
+        </ul>
+    </div>
+
 </ion-view>

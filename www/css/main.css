@@ -5,8 +5,26 @@
 .paddingbottom0 {
   padding-bottom: 0px !important;
 }
+.paddingtop0 {
+  padding-top: 0px !important;
+}
 .marginbottom0 {
   margin-bottom: 0px !important;
+}
+.margintop30 {
+  margin-top: 31%;
+}
+.fontsize12 {
+  font-size: 1.2em !important;
+}
+.fontsize34 {
+  font-size: 3.4em !important;
+}
+.normalwhitespace {
+  white-space: normal !important;
+}
+.floatright {
+  float: right;
 }
 .primarybg {
   background-color: #03bdd6 !important;
@@ -27,11 +45,16 @@
   color: #04a4ba !important;
 }
 /*REUSABLES*/
+.questionslist {
+  margin-bottom: 90px !important;
+}
 .answereddiv {
+  font-size: 0.9em !important;
   background-color: rgba(3, 189, 214, 0.19);
   color: #03bdd6;
-  padding: 1.1%;
-  border-radius: 4px;
+  padding: 4.1%;
+  width: 120%;
+  border-radius: 5px;
 }
 .questionimagediv {
   height: 80px;
@@ -41,4 +64,93 @@
 }
 .questionimage {
   max-width: 100%;
+}
+.timetext {
+  color: #9e9e9e;
+  margin-top: 3%;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+.questionuser {
+  font-size: 1.16em !important;
+  line-height: 27px;
+  padding: 2%;
+  display: inline-flex;
+}
+.questionsubject {
+  line-height: 34px;
+  font-size: 0.9em !important;
+}
+.questionsubjdiv {
+  margin-left: -6%;
+}
+.questionbookmark {
+  font-size: 1.5em !important;
+  line-height: 40px;
+}
+.bottomtabimages {
+  line-height: 80px;
+}
+.bottomimagestab {
+  height: 55px;
+}
+.bottomstabs {
+  height: 80px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 5;
+  background-color: white;
+  border-top: 1px solid #9e9e9e;
+}
+.floatinginnerbuttontext {
+  margin-left: -58px;
+  margin-top: 5px;
+  position: absolute;
+  background-color: #e0e0e0;
+  padding: 10%;
+  font-size: 1.1em;
+  border-radius: 7px;
+  padding-left: 22%;
+  padding-right: 22%;
+  line-height: 20px;
+}
+.floatinginnerbuttontextask {
+  margin-left: -129px;
+}
+.floatoverlay {
+  z-index: 10;
+  position: absolute;
+  transition: 0.3s linear;
+}
+.floatoverlaycolor {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.65);
+}
+.headersearchbox {
+  border: 0px !important;
+  height: 30px !important;
+  border-radius: 10px !important;
+  width: 70% !important;
+  font-size: 1.1em !important;
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+  color: white !important;
+  padding-left: 2% !important;
+}
+.chaptersdiv {
+  position: fixed;
+  width: 100%;
+  bottom: 89px;
+  height: 200px;
+  overflow: scroll;
+  /* border-top: 2px solid grey; */
+  box-shadow: 2px -1px 8px rgba(0, 0, 0, 0.41);
+  z-index: 999;
+}
+.chapterbuttons {
+  position: fixed;
+  bottom: 80px;
+  background-color: white;
+  z-index: 10;
 }
