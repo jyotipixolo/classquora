@@ -6023,7 +6023,8 @@ textarea.materialize-textarea + label:after {
 }
 
 .input-field .prefix.active {
-  color: #26a69a;
+  color: white;
+    background-color: #03bdd6;
 }
 
 .input-field .prefix ~ input,
