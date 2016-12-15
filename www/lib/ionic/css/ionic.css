@@ -4028,16 +4028,18 @@ a.subdued {
     .bar .button.button-icon:before,
     .bar .button .icon:before, .bar .button.icon:before, .bar .button.icon-left:before, .bar .button.icon-right:before, .bar button.button-icon:before,
     .bar button .icon:before, .bar button.icon:before, .bar button.icon-left:before, .bar button.icon-right:before {
-      padding-right: 2px;
-      padding-left: 2px;
+      padding-right: 6px;
+      padding-left: 4px;
       font-size: 20px;
-      line-height: 32px; }
+      line-height: 32px;
+      }
     .bar .button.button-icon, .bar button.button-icon {
       font-size: 17px; }
       .bar .button.button-icon .icon:before, .bar .button.button-icon:before, .bar .button.button-icon.icon-left:before, .bar .button.button-icon.icon-right:before, .bar button.button-icon .icon:before, .bar button.button-icon:before, .bar button.button-icon.icon-left:before, .bar button.button-icon.icon-right:before {
         vertical-align: top;
-        font-size: 32px;
-        line-height: 32px; }
+        font-size: 28px;
+        line-height: 32px;
+        }
     .bar .button.button-clear, .bar button.button-clear {
       padding-right: 2px;
       padding-left: 2px;
@@ -6751,8 +6753,12 @@ button.item.item-button-right {
 
 .tabs .tab-item .badge.badge-assertive,
 .badge.badge-assertive {
-  background-color: #ef473a;
-  color: #fff; }
+  height: 22px;
+  background-color: #03bdd6;
+  color: #fff;
+  font-size: 1.2em;
+  padding-left: 16px;
+  }
 
 .tabs .tab-item .badge.badge-balanced,
 .badge.badge-balanced {
