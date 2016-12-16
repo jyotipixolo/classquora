@@ -140,7 +140,16 @@ angular.module('starter.controllers', [])
     .controller('feedbackCtrl', function ($scope, $stateParams) {
 
     })
-    .controller('profileCtrl', function ($scope, $stateParams) {})
+    .controller('profileCtrl', function ($scope, $stateParams, $location) {
+    
+    /*ROUTING*/
+    $scope.gotoquestionsasked = function(){
+        $location.path("/app/playlists");
+    };
+    
+    
+    
+})
     .controller('paqCtrl', function ($scope, $stateParams) {})
     .controller('bookmarksCtrl', function ($scope, $stateParams) {})
     .controller('askCtrl', function ($scope, $stateParams) {})

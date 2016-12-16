@@ -26,6 +26,9 @@
 .floatright {
   float: right;
 }
+.lightgreybg {
+  background-color: #fafafa !important;
+}
 .primarybg {
   background-color: #03bdd6 !important;
   color: white !important;

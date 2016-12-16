@@ -1,32 +1,60 @@
 <ion-view view-title="Profile">
-    <ion-header-bar align-title="left" class="bar-calm primarybg">
+    <ion-header-bar align-title="left" class=" lightgreybg lightblackcolor z-depth-2">
         <div class="buttons">
-            <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="left">
+            <button class="button button-icon button-clear ion-android-more-vertical lightblackcolor" menu-toggle="left">
             </button>
         </div>
-        <h1 class="title">Profile</h1>
+        <h1 class="title lightblackcolor">Profile</h1>
         <div class="buttons">
-            <button class="button button-icon button-clear icon-filter">
+            <button class="button button-icon button-clear ion-edit lightblackcolor">
             </button>
         </div>
     </ion-header-bar>
     <ion-content class="has-header">
 
-        <div class=" menuprofile">
+        <div class="">
 
-            <div class="row">
-                <div class="col col-30"></div>
-                <div class="col col-40">
-                    <img src="img/teacher.png" width="100%">
-                    <div class="row marginbottom0 ">
-                        <h4 class="menuname textcenter">Abhay Amin</h4>
-                    </div>
-                    <div class="row marginbottom0">
-                        <h6 class="greycolor menuprofileemail">Student</h6>
-                    </div>
+            <div class="row profilephotodiv">
+                <div class="col col-10"></div>
+                <div class="col col-80 textcenter">
+                    <img src="img/teacher.png" width="50%">
+                    <h4 class="menuname  lightblackcolor">Abhay Navinchandra Amin</h4>
+                    <h6 class="lightblackcolor menuprofileemail">in house Student</h6>
                 </div>
-                <div class="col col-30"></div>
+                <div class="col col-10"></div>
 
+            </div>
+            
+            <div class="row">
+                <div class="col col-20 textcenter">
+                <img src="img/id-card-profile.png" width="50%">
+                </div>
+                <div class="col col-80 lightblackcolor">
+                    <h5 class="lightblackcolor fontsize13 marginbottom12">IH262415</h5>
+                    <h5 class="lightblackcolor fontsize13 marginbottom12">IXth</h5>
+                    <h5 class="lightblackcolor fontsize13 ">Fatima High School</h5>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col col-20 textcenter">
+                    <img src="img/register-phone.png" width="45%">
+                </div>
+                <div class="col col-80 lightblackcolor fontsize13">9820840946</div>
+            </div>
+            
+            <div class="row">
+                <div class="col col-20 textcenter">
+                    <img src="img/register-mail.png" width="45%">
+                </div>
+                <div class="col col-80 lightblackcolor fontsize13">abhay.pixolo@gmail.com</div>
+            </div>
+            
+            <div class="row" ng-click="gotoquestionsasked()">
+                <div class="col col-20 textcenter">
+                    <img src="img/question-asked-color.png" width="45%">
+                </div>
+                <div class="col col-80 lightblackcolor fontsize13">Questions Asked</div>
             </div>
 
 

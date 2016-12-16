@@ -17,6 +17,9 @@
 .fontsize12 {
   font-size: 1.2em !important;
 }
+.fontsize13 {
+  font-size: 1.3em !important;
+}
 .fontsize34 {
   font-size: 3.4em !important;
 }
@@ -28,6 +31,16 @@
 }
 .lightgreybg {
   background-color: #fafafa !important;
+  color: #616161 !important;
+}
+.lightgreycolor {
+  color: #fafafa !important;
+}
+.lightblackbg {
+  background-color: #616161 !important;
+}
+.lightblackcolor {
+  color: #616161 !important;
 }
 .primarybg {
   background-color: #03bdd6 !important;
@@ -179,4 +192,18 @@
 }
 .menuprofileemail {
   color: #616161;
+}
+/*PROFILE*/
+.profilephotodiv {
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px #e0e0e0;
+}
+.profilename {
+  font-size: 1.5em;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+.spacing7 {
+  margin-bottom: 7px;
+  margin-top: 7px;
 }

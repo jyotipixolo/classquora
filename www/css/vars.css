@@ -11,11 +11,17 @@
 .marginbottom0 {
   margin-bottom: 0px !important;
 }
+.marginbottom12 {
+  margin-bottom: 12px !important;
+}
 .margintop30 {
   margin-top: 31%;
 }
 .fontsize12 {
   font-size: 1.2em !important;
+}
+.fontsize13 {
+  font-size: 1.3em !important;
 }
 .fontsize34 {
   font-size: 3.4em !important;
@@ -28,6 +34,16 @@
 }
 .lightgreybg {
   background-color: #fafafa !important;
+  color: #616161 !important;
+}
+.lightgreycolor {
+  color: #fafafa !important;
+}
+.lightblackbg {
+  background-color: #616161 !important;
+}
+.lightblackcolor {
+  color: #616161 !important;
 }
 .primarybg {
   background-color: #03bdd6 !important;

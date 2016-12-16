@@ -6753,8 +6753,12 @@ button.item.item-button-right {
 
 .tabs .tab-item .badge.badge-assertive,
 .badge.badge-assertive {
-  background-color: #ef473a;
-  color: #fff; }
+  height: 22px;
+  background-color: #03bdd6;
+  color: #fff;
+  font-size: 1.2em;
+  padding-left: 16px;
+  }
 
 .tabs .tab-item .badge.badge-balanced,
 .badge.badge-balanced {

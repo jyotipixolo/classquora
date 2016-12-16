@@ -26,6 +26,9 @@
 .floatright {
   float: right;
 }
+.lightgreybg {
+  background-color: #fafafa !important;
+}
 .primarybg {
   background-color: #03bdd6 !important;
   color: white !important;
@@ -153,4 +156,27 @@
   bottom: 80px;
   background-color: white;
   z-index: 10;
+}
+/*MENU*/
+.menuname {
+  font-size: 1.5em;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+.menutext {
+  font-size: 14px;
+  color: #616161;
+  background-color: #fafafa;
+  border-width: 0px !important;
+}
+.menuicons {
+  font-size: 28px;
+  color: #616161;
+}
+.menuprofile {
+  padding: 1%;
+  border-bottom: 1px #e0e0e0 solid;
+}
+.menuprofileemail {
+  color: #616161;
 }
