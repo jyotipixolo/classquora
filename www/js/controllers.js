@@ -40,12 +40,21 @@ angular.module('starter.controllers', [])
             }, 1000);
         };
     })
-    .controller('loginCtrl', function ($scope, $stateParams) {
+    .controller('loginCtrl', function ($scope, $stateParams, $interval) {
 
         /*ROUTING*/
         $scope.gotoregistertab = function () {
-            $('select').material_select();
+            console.log("test");
+            $interval(function () {
+                $('select').material_select();
+            },100, 1);
+
         };
+
+        /*VIEW LOGIC*/
+
+
+        /*FUNCTIONS*/
 
     })
     .controller('PlaylistsCtrl', function ($scope, $interval) {

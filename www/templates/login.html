@@ -76,7 +76,7 @@
 
             </ion-tab>
 
-            <ion-tab title="Register">
+            <ion-tab title="Register" on-select="gotoregistertab()">
                 <div class="row">
                     <div class="col"></div>
                     <div class="col col-90">
@@ -191,16 +191,16 @@
 
 
 
-
+       
 
 
 
 
 
     </ion-content>
-    <script>
-        $(document).ready(function () {
-            $('select').material_select();
-        });
-    </script>
+ <script>
+            $(document).ready(function () {
+                $('select').material_select();
+            });
+        </script>
 </ion-view>
