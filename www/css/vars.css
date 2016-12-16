@@ -2,6 +2,10 @@
 .textcenter {
   text-align: center !important;
 }
+.marginauto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 .paddingbottom0 {
   padding-bottom: 0px !important;
 }
@@ -13,6 +17,18 @@
 }
 .marginbottom12 {
   margin-bottom: 12px !important;
+}
+.margintop0 {
+  margin-top: 0px !important;
+}
+margintop3 {
+  margin-top: 3px !important;
+}
+.margintop10 {
+  margin-top: 10px !important;
+}
+.margintop25 {
+  margin-top: 25px !important;
 }
 .margintop30 {
   margin-top: 31%;
@@ -31,6 +47,12 @@
 }
 .floatright {
   float: right;
+}
+.width65 {
+  width: 65% !important;
+}
+.width100 {
+  width: 100% !important;
 }
 .lightgreybg {
   background-color: #fafafa !important;
