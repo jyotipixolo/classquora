@@ -41,7 +41,7 @@ angular.module('starter.controllers', [])
         };
     })
     .controller('loginCtrl', function ($scope, $stateParams) {
-
+    
     })
     .controller('PlaylistsCtrl', function ($scope, $interval) {
 
@@ -123,7 +123,7 @@ angular.module('starter.controllers', [])
 
 
         $scope.checkoverlay = function () {
-            $interval(function() {
+            $interval(function () {
                 console.log($('#floatbtn').hasClass('active'));
                 $scope.floatactive = $('#floatbtn').hasClass('active');
             }, 200, 1);

@@ -82,43 +82,73 @@
                     <div class="col col-90">
 
                         <div class="loginbox">
-
-                            <div class="row loginrow">
+                            <div class="row">
                                 <div class="col-10"></div>
                                 <div class="col-80">
-                                    <form class="">
-                                        <div class="input-field">
-                                            <i class="ion-android-call  prefix loginicon"></i>
-                                            <input id="icon_prefix" type="number" class="validate">
-                                            <label for="icon_prefix">Phone Number</label>
-                                        </div>
 
-                                    </form>
+                                    <div class="input-field register ">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="icon_prefix" type="text" class="validate">
+                                        <label for="icon_prefix" class="registerfont">Name</label>
+                                    </div>
+                                    <div class="input-field register ">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="icon_prefix" type="text" class="validate">
+                                        <label for="icon_prefix" class="registerfont">School Name</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <ul id="dropdown2" class="dropdown-content">
+                                                <li><a href="#!">one<span class="badge">1</span></a></li>
+                                                <li><a href="#!">two<span class="new badge">1</span></a></li>
+                                                <li><a href="#!">three</a></li>
+                                            </ul>
+                                            <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                        </div>
+                                        <div class="col-50">
+                                            <ul id="dropdown2" class="dropdown-content">
+                                                <li><a href="#!">one<span class="badge">1</span></a></li>
+                                                <li><a href="#!">two<span class="new badge">1</span></a></li>
+                                                <li><a href="#!">three</a></li>
+                                            </ul>
+                                            <a class="btn dropdown-button" href="#dropdown2" data-activates="dropdown2">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="input-field register ">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="icon_prefix" type="number" class="validate">
+                                        <label for="icon_prefix" class="registerfont">Phone Number</label>
+                                    </div>
+                                    <div class="input-field register ">
+                                        <i class="material-icons prefix">account_circle</i>
+                                        <input id="icon_prefix" type="email" class="validate">
+                                        <label for="icon_prefix" class="registerfont">Email ID</label>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-30"></div>
+                                        <div class="col-30">
+                                            <div class="input-field register ">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="icon_prefix" type="password" class="validate">
+                                                <label for="icon_prefix" class="registerfont">Create Password</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-30"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-10"></div>
+                                        <div class="col-80 loginbut"><a class="waves-effect waves-light btn primarybg" style="width:100%;">Register</a>
+                                        </div>
+                                        <div class="col-10"></div>
+                                    </div>
+
+                                    
                                 </div>
                                 <div class="col-10"></div>
 
                             </div>
-                            <div class="row">
-                                <div class="col-10"></div>
-                                <div class="col-80">
-                                    <form class="">
-
-                                        <div class="input-field">
-                                            <i class="ion-ios-locked  prefix loginicon"></i>
-                                            <input id="icon_prefix" type="password" class="validate">
-                                            <label for="icon_prefix">Password</label>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="col-10"></div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-10"></div>
-                                <div class="col-80 loginbut"><a class="waves-effect waves-light btn primarybg" style="width:100%;">Login</a></div>
-                                <div class="col-10"></div>
-                            </div>
-
                         </div>
                     </div>
                     <div class="col"></div>
@@ -129,5 +159,19 @@
 
 
 
+
+
+
+
+
+
     </ion-content>
+    <script>
+        $(document).ready(function() {
+            console.log($('select'));
+            $('select').material_select();
+        });
+        console.log("test");
+
+    </script>
 </ion-view>
