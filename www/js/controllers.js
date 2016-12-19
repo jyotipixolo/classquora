@@ -84,7 +84,7 @@ angular.module('starter.controllers', [])
                 'id': 1,
                 'userid': 1,
                 'usertype': 1,
-                'username': 'Abhay Amin',
+                'username': 'Mayur Nalwala',
                 'time': '',
                 'subject': 'Physics',
                 'bookmarked': true,
@@ -98,7 +98,7 @@ angular.module('starter.controllers', [])
                 'id': 2,
                 'userid': 2,
                 'usertype': 2,
-                'username': 'Abhay Amin',
+                'username': 'Mayur Nalwala',
                 'time': '',
                 'subject': 'Biology',
                 'bookmarked': true,
@@ -112,7 +112,7 @@ angular.module('starter.controllers', [])
                 id: 3,
                 'userid': 3,
                 'usertype': 3,
-                'username': 'Abhay Amin',
+                'username': 'Mayur Nalwala',
                 'time': '',
                 'subject': 'Chemistry',
                 'bookmarked': true,
@@ -126,7 +126,7 @@ angular.module('starter.controllers', [])
                 id: 4,
                 'userid': 2,
                 'usertype': 2,
-                'username': 'Abhay Amin',
+                'username': 'Mayur Nalwala',
                 'time': '',
                 'subject': 'Maths',
                 'bookmarked': true,
@@ -138,8 +138,8 @@ angular.module('starter.controllers', [])
         }
   ];
 
-
         $scope.checkoverlay = function () {
+
             $interval(function () {
                 console.log($('#floatbtn').hasClass('active'));
                 $scope.floatactive = $('#floatbtn').hasClass('active');
@@ -171,7 +171,7 @@ angular.module('starter.controllers', [])
                 'id': 1,
                 'userid': 1,
                 'usertype': 1,
-                'username': 'Atitthya Saikia',
+                'username': 'Mayur N',
                 'time': '',
                 'answer': "What does the fox say ? What does the fox say ? What does the ofx say ?",
                 'verified': true,
@@ -182,7 +182,7 @@ angular.module('starter.controllers', [])
                 'id': 2,
                 'userid': 2,
                 'usertype': 2,
-                'username': 'Abhay Amin',
+                'username': 'Mayur B',
                 'time': '',
                 'answer': "What does the fox say ? What does the fox say ? What does the ofx say ?",
                 'verified': true,
@@ -193,7 +193,7 @@ angular.module('starter.controllers', [])
                 id: 3,
                 'userid': 3,
                 'usertype': 3,
-                'username': 'Omkar Kulkarni',
+                'username': 'Mayur C',
                 'time': '',
                 'answer': "What does the fox say ? What does the fox say ? What does the ofx say ?",
                 'verified': false,
@@ -204,7 +204,7 @@ angular.module('starter.controllers', [])
                 id: 4,
                 'userid': 2,
                 'usertype': 2,
-                'username': 'Shravan Shetty',
+                'username': 'Mayur D',
                 'time': '',
                 'answer': "What does the fox say ? What does the fox say ? What does the ofx say ?",
                 'verified': false,
