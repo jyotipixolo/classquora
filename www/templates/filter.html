@@ -5,13 +5,108 @@
             </button>
         </div>
         <h1 class="title">Filter</h1>
-        <div class="buttons">
-            <button class="button button-icon button-clear icon-filter">
-            </button>
-        </div>
     </ion-header-bar>
     <ion-content class="has-header">
-       
+
+        <div class="row marginbottom0">
+            <h5 class="fontsize12 lightblackcolor">Filter By</h5>
+        </div>
+
+
+        <!--SUBJECTS-->
+        <div class="bottomstabs filtersubjectstabs">
+            <div class="row marginbottom0 paddingbottom0 bottomimagestab paddingtop0">
+                <div class="col col-25 textcenter bottomtabimages paddingbottom0">
+                    <img src="img/physics-active.png" width="40%">
+
+                </div>
+                <div class="col col-25 textcenter bottomtabimages paddingbottom0">
+                    <img src="img/chemistry-active.png" width="40%">
+
+                </div>
+                <div class="col col-25 textcenter bottomtabimages paddingbottom0">
+                    <img src="img/biology-active.png" width="40%">
+
+                </div>
+                <div class="col col-25 textcenter bottomtabimages paddingbottom0">
+                    <img src="img/maths-active.png" width="40%">
+
+                </div>
+            </div>
+            <div class="row marginbottom0 paddingbottom0">
+                <div class="col col-25 textcenter">
+                    <h6>Physics</h6></div>
+                <div class="col col-25 textcenter">
+                    <h6>Chemistry</h6></div>
+                <div class="col col-25 textcenter">
+                    <h6>Biology</h6></div>
+                <div class="col col-25 textcenter">
+                    <h6>Maths</h6></div>
+            </div>
+
+        </div>
+
+        <!--CHAPTERS-->
+        <div class="chaptersdiv filterchapters z-depth-5">
+            <ul class="list">
+                <li class="item filterchapterlist" ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]">
+                    <p>
+                        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+                        <label for="filled-in-box">Chapter {{i}}</label>
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+        <!--FILTERS-->
+        <ul class="list otherfiltersdiv">
+            <li class="item otherfilterslist">
+                <p>
+                    <input type="checkbox" class="filled-in" id="answered" checked="checked" />
+                    <label for="answered" class="otherfilterslabel">Answered</label>
+                </p>
+            </li>
+            <li class="item otherfilterslist">
+                <p>
+                    <input type="checkbox" class="filled-in" id="unanswered" checked="checked" />
+                    <label for="unanswered" class="otherfilterslabel">Un-Answered</label>
+                </p>
+            </li>
+            <li class="item otherfilterslist">
+                <p>
+                    <input type="checkbox" class="filled-in" id="answeredbyteacher" checked="checked" />
+                    <label for="answeredbyteacher" class="otherfilterslabel">Answered By Teacher</label>
+                </p>
+            </li>
+            <li class="item otherfilterslist">
+                <p>
+                    <input type="checkbox" class="filled-in" id="answeredbystudent" checked="checked" />
+                    <label for="answeredbystudent" class="otherfilterslabel">Answered By Student</label>
+                </p>
+            </li>
+            <li class="item otherfilterslist">
+                <p>
+                    <input type="checkbox" class="filled-in" id="askedbytecher" checked="checked" />
+                    <label for="askedbytecher" class="otherfilterslabel">Asked By Techer</label>
+                </p>
+            </li>
+            <li class="item otherfilterslist">
+                <p>
+                    <input type="checkbox" class="filled-in" id="askedbystudent" checked="checked" />
+                    <label for="askedbystudent" class="otherfilterslabel">Asked By Student</label>
+                </p>
+            </li>
+            <li class="item otherfilterslist">
+                <p>
+                    <input type="checkbox" class="filled-in" id="bookmarked" checked="checked" />
+                    <label for="bookmarked" class="otherfilterslabel">Bookmarked</label>
+                </p>
+            </li>
+        </ul>
 
     </ion-content>
+
+    <div class="filterokdiv">
+        <a class="waves-effect waves-light btn primarybg floatright">OK</a>
+    </div>
 </ion-view>

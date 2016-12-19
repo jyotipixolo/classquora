@@ -4,14 +4,24 @@
             <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="left">
             </button>
         </div>
-        <h1 class="title">Chat List</h1>
+        <h1 class="title">Chats</h1>
         <div class="buttons">
-            <button class="button button-icon button-clear icon-filter">
+            <button class="button button-icon button-clear ion-plus-round">
             </button>
         </div>
     </ion-header-bar>
     <ion-content class="has-header">
-       
+
+
+        <div class="list">
+
+            <a class="item item-avatar" href="#/app/chat" ng-repeat="a in [1,2,3,4,5,6,7,8]">
+                <img src="img/inhouse.png">
+                <h2 class="chatname">Mayur Nalwala</h2>
+                <h5 class="darkgreycolor floatright chattime">6:20pm</h5>
+            </a>
+
+        </div>
 
     </ion-content>
 </ion-view>

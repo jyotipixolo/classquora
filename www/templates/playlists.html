@@ -18,7 +18,7 @@
 
         <div class="list marginbottom0 questionslist">
 
-            <a class="item" href="#" ng-repeat="question in questions" style="padding: 0px;">
+            <a class="item" ng-repeat="question in questions" style="padding: 0px;" href="#/playlists/:1">
 
                 <div class="row marginbottom0">
                     <div class="col col-10 textcenter">
@@ -68,64 +68,10 @@
 
     <div class="chaptersdiv" ng-if="subjectselect">
         <ul class="list" style="margin-bottom: 30px;">
-            <li class="item">
+            <li class="item" ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]">
                 <p>
                     <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter 1</label>
-                </p>
-            </li>
-            <li class="item">
-                <p>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter 2</label>
-                </p>
-            </li>
-            <li class="item">
-                <p>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter 3</label>
-                </p>
-            </li>
-            <li class="item">
-                <p>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter 4</label>
-                </p>
-            </li>
-            <li class="item">
-                <p>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter 5</label>
-                </p>
-            </li>
-            <li class="item">
-                <p>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter 6</label>
-                </p>
-            </li>
-            <li class="item">
-                <p>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter 7</label>
-                </p>
-            </li>
-            <li class="item">
-                <p>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter 8</label>
-                </p>
-            </li>
-            <li class="item">
-                <p>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter 9</label>
-                </p>
-            </li>
-            <li class="item">
-                <p>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter 10</label>
+                    <label for="filled-in-box">Chapter {{i}}</label>
                 </p>
             </li>
 
@@ -141,6 +87,7 @@
         </div>
 
     </div>
+    
     <div class="bottomstabs">
         <div class="row marginbottom0 paddingbottom0 bottomimagestab paddingtop0">
             <div class="col col-25 textcenter bottomtabimages paddingbottom0">

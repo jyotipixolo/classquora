@@ -2,6 +2,12 @@
 .textcenter {
   text-align: center !important;
 }
+.textright {
+  text-align: right !important;
+}
+.textleft {
+  text-align: left !important;
+}
 .marginauto {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -33,11 +39,17 @@ margintop3 {
 .margintop30 {
   margin-top: 31%;
 }
+.paddingbottom30 {
+  padding-bottom: 30px;
+}
 .fontsize12 {
   font-size: 1.2em !important;
 }
 .fontsize13 {
   font-size: 1.3em !important;
+}
+.fontsize17 {
+  font-size: 1.7em !important;
 }
 .fontsize34 {
   font-size: 3.4em !important;
@@ -48,11 +60,29 @@ margintop3 {
 .floatright {
   float: right;
 }
+.displayinline {
+  display: inline-block !important;
+}
+.positionrelative {
+  position: relative !important;
+}
+.noshadow {
+  box-shadow: 0px 0px 0px #fff !important;
+}
+.borderradius10 {
+  border-radius: 10px !important;
+}
+.width40p {
+  width: 40px;
+}
 .width65 {
   width: 65% !important;
 }
 .width100 {
   width: 100% !important;
+}
+.greyborder {
+  border: 2px solid #9e9e9e;
 }
 .lightgreybg {
   background-color: #fafafa !important;
@@ -60,6 +90,9 @@ margintop3 {
 }
 .lightgreycolor {
   color: #fafafa !important;
+}
+.greybg {
+  background-color: #e0e0e0 !important;
 }
 .lightblackbg {
   background-color: #616161 !important;
@@ -79,11 +112,28 @@ margintop3 {
   background-color: #04a4ba !important;
   color: white !important;
 }
+.greenbg {
+  background-color: #0f7b83 !important;
+  color: white !important;
+}
+.darkbluebg {
+  background-color: #3a93b5 !important;
+  color: white !important;
+}
 .primarycolor {
   color: #03bdd6 !important;
 }
 .secondarycolor {
   color: #04a4ba !important;
+}
+.greencolor {
+  color: #0f7b83 !important;
+}
+.darkbluecolor {
+  color: #3a93b5 !important;
+}
+.darkgreycolor {
+  color: #9e9e9e !important;
 }
 /*REUSABLES*/
 .questionslist {
@@ -232,6 +282,79 @@ margintop3 {
   margin-bottom: 7px;
   margin-top: 7px;
 }
+.changenumberbtn {
+  float: right;
+  padding: 2% !important;
+  /* vertical-align: text-bottom; */
+  line-height: 20px !important;
+  height: 30px !important;
+  font-size: 0.8em;
+  font-weight: 600;
+  border-radius: 10px !important;
+}
+.phnumberdown {
+  vertical-align: sub;
+}
+.profileeditimput {
+  width: 84%;
+  display: inline-block;
+}
+/*PASSWORD*/
+.passpopup .popup {
+  width: 100%;
+}
+.passlockimage {
+  position: absolute;
+  width: 12%;
+  top: 87px;
+  left: 42%;
+  background-color: white;
+}
+.passheaddiv {
+  border-bottom: 2px solid #3a93b5;
+  padding-bottom: 20px;
+}
+/*NUMBER*/
+.countrycode {
+  font-size: 1.8em !important;
+  margin-left: 12% !important;
+  width: 60px !important;
+}
+/*FILTER*/
+.filtersubjectstabs {
+  position: initial !important;
+}
+.filterchapters {
+  position: initial !important;
+  margin-top: 10px !important;
+  height: 170px !important;
+}
+.filterchapterlist {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.otherfiltersdiv {
+  border-top: 1px solid #9e9e9e;
+  margin-bottom: 60px !important;
+}
+.otherfilterslist {
+  border: 0px !important;
+  padding-bottom: 0px !important;
+  padding-top: 10px !important;
+}
+.filterokdiv {
+  padding-right: 10px;
+  position: fixed;
+  bottom: 5px;
+  background-color: white;
+  width: 100%;
+  border-top: 1px solid #9e9e9e;
+  padding-top: 5px;
+}
+.otherfilterslabel {
+  font-size: 1.2em !important;
+  color: #383636;
+}
 /*REGISTERPAGE*/
 .loginboxregister {
   height: 496px !important;
@@ -241,4 +364,160 @@ margintop3 {
   margin-bottom: 0px !important;
   font-size: 1.4em !important;
   color: #9e9e9e;
+}
+/*CHAT LIST*/
+.chatname {
+  font-size: 1.3em !important;
+  margin-top: 2% !important;
+  display: inline-block;
+}
+.chattime {
+  font-size: 0.8em !important;
+  margin-top: 4% !important;
+}
+/*CHAT*/
+.righttopmsg {
+  display: -webkit-inline-box;
+  background-color: #03bdd6;
+  border-radius: 15px;
+  border-bottom-right-radius: 0px;
+  padding: 3%;
+  margin-bottom: 5px;
+}
+.rightmidmsg {
+  display: -webkit-inline-box;
+  background-color: #03bdd6;
+  border-radius: 15px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  padding: 3%;
+  margin-bottom: 5px;
+}
+.rightbottommsg {
+  display: -webkit-inline-box;
+  background-color: #03bdd6;
+  border-radius: 15px;
+  border-top-right-radius: 0px;
+  padding: 3%;
+  margin-bottom: 5px;
+}
+.lefttopmsg {
+  display: -webkit-inline-box;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  padding: 3%;
+  margin-bottom: 5px;
+}
+.leftmidmsg {
+  display: -webkit-inline-box;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+  padding: 3%;
+  margin-bottom: 5px;
+}
+.leftbottommsg {
+  display: -webkit-inline-box;
+  background-color: #e0e0e0;
+  border-radius: 15px;
+  border-top-left-radius: 0px;
+  padding: 3%;
+  margin-bottom: 5px;
+}
+.chatuserimage {
+  position: relative;
+  top: 82%;
+  width: 120%;
+}
+.chatdiv {
+  height: 93%;
+  overflow-x: scroll;
+  position: relative;
+}
+/*STANDARD*/
+.chatdot {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 100%;
+  position: absolute;
+  /* margin-left: -10px; */
+  left: 29px;
+  z-index: 5;
+  top: 2px;
+}
+.standardbox {
+  border: 3px solid #03bdd6;
+  height: 150px;
+  width: 150px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20%;
+}
+.standardnumber {
+  font-size: 8em;
+  margin-bottom: -8px;
+  color: #03bdd6;
+}
+/*ASK A QUESTION*/
+.takepicturediv {
+  float: right;
+  color: #03bdd6;
+  margin-bottom: 30px;
+  font-size: 1.2em;
+  font-style: italic;
+}
+.takepictureicon {
+  font-size: 3em;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.postbutton {
+  float: right;
+  width: 30%;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+/*ANSWERS*/
+.typeanswerdiv {
+  background-color: white;
+  z-index: 99;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+.typeanswerinput {
+  width: 68% !important;
+  display: -webkit-inline-box !important;
+  border-bottom: 0px !important;
+  font-size: 1.2em !important;
+  padding: 0px !important;
+  max-height: 400px;
+}
+.typeanswerinput:focus {
+  box-shadow: 0px 0px 0px #fff !important;
+}
+.answertexticon {
+  bottom: 0px;
+  position: fixed;
+}
+/*OTP*/
+.otpinqlogo {
+  width: 40%;
+  height: 40%;
+  margin-top: 20%;
+}
+.otppencil::before {
+  line-height: 32px !important;
+  font-size: 17px !important;
+}
+.otppencil {
+  min-height: 10px;
+  line-height: 0px;
+}
+.otpinput:focus {
+  box-shadow: 0px 0px 0px #fff !important;
 }

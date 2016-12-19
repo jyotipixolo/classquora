@@ -113,6 +113,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
       }
     })
+  .state('app.otp', {
+      url: '/otp',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/otp.html',
+            controller: 'otpCtrl'
+        }
+      }
+    })
   .state('app.standard', {
       url: '/standard',
       views: {

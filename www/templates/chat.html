@@ -1,17 +1,142 @@
 <ion-view view-title="Chat">
     <ion-header-bar align-title="left" class="bar-calm primarybg">
         <div class="buttons">
-            <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="left">
+            <button class="button button-icon button-clear ion-chevron-left">
             </button>
         </div>
-        <h1 class="title">Chat</h1>
-        <div class="buttons">
-            <button class="button button-icon button-clear icon-filter">
-            </button>
-        </div>
+        <h1 class="title">Mayur Nalwala</h1>
     </ion-header-bar>
     <ion-content class="has-header">
-       
+
+        <div class="chatdiv">
+
+            <div class="extradiv"></div>
+
+            <div class="row marginbottom0">
+                <div class="col col-10 paddingbottom0 paddingtop0"></div>
+                <div class="col col-80 paddingbottom0 paddingtop0">
+                    <div class="width100 textright">
+                        <div class="righttopmsg">
+                            <p>this is a message</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-10 paddingbottom0 paddingtop0"></div>
+            </div>
+            <div class="row marginbottom0">
+                <div class="col col-10 paddingbottom0 paddingtop0"></div>
+                <div class="col col-80 paddingbottom0 paddingtop0">
+                    <div class="width100 textright">
+                        <div class="rightmidmsg">
+                            <p>this is a message</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-10 paddingbottom0 paddingtop0"></div>
+            </div>
+
+            <div class="row marginbottom0">
+                <div class="col col-10 paddingbottom0 paddingtop0"></div>
+                <div class="col col-80 paddingbottom0 paddingtop0">
+                    <div class="width100 textright">
+                        <div class="rightbottommsg">
+                            <p>this is a message</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-10 paddingbottom0 paddingtop0 userimagediv">
+                    <img src="img/inhouse.png" class="positionrelative" width="120%">
+                </div>
+
+            </div>
+
+            <div class="row marginbottom0">
+                <div class="col col-10 paddingbottom0 paddingtop0"></div>
+                <div class="col col-80 paddingbottom0 paddingtop0">
+                    <div class="width100 textleft">
+                        <div class="lefttopmsg">
+                            <p>this is a message</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-10 paddingbottom0 paddingtop0"></div>
+            </div>
+            <div class="row marginbottom0">
+                <div class="col col-10 paddingbottom0 paddingtop0"></div>
+                <div class="col col-80 paddingbottom0 paddingtop0">
+                    <div class="width100 textleft">
+                        <div class="leftmidmsg">
+                            <p>this is a message</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-10 paddingbottom0 paddingtop0"></div>
+            </div>
+
+            <div class="row marginbottom0">
+                <div class="col col-10 paddingbottom0 paddingtop0 userimagediv">
+                    <img src="img/teacher.png" class="positionrelative" width="120%">
+                </div>
+                <div class="col col-80 paddingbottom0 paddingtop0">
+                    <div class="width100 textleft">
+                        <div class="leftbottommsg">
+                            <p>this is a message this is a message this is a message this is a message this is a message this is a message this is a message this is a message this is a message this is a message this is a message this is a message this is ge</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-10 paddingbottom0 paddingtop0">
+
+                </div>
+            </div>
+
+        </div>
+
 
     </ion-content>
+
+    <div class="typeanswerdiv ">
+        <div class="input-field z-depth-2">
+            <textarea placeholder="Type Your Answer" id="answer" class="materialize-textarea marginbottom0 typeanswerinput"></textarea>
+            <a class="button button-icon icon ion-camera primarycolor answertexticon" style="right: 50px;"></a>
+            <a class="button button-icon icon ion-settings primarycolor answertexticon" style="right: 10px;"></a>
+        </div>
+    </div>
 </ion-view>
+
+<script>
+    $(document).ready(function() {
+        var d = $('.chatdiv');
+        d.scrollTop(d.prop("scrollHeight"));
+
+
+        var as = document.querySelectorAll('.chatdiv .userimagediv');
+        var i;
+
+        for (i = 0; i < as.length; i++) {
+
+            reltop = as[i].offsetHeight - 22;
+
+            var x = as[i].querySelectorAll('img')[0];;
+            console.log(x);
+            x.style.top = reltop + 'px';
+        };
+
+        /*var rows = document.querySelectorAll('.chatdiv .row');
+        var r;
+        var height = 0;
+        var chatdivheight = $('.chatdiv').height();
+        var ext = $('.extradiv');
+
+        for (r = 0; r < rows.length; i++) {
+            height += rows[r].offsetHeight;
+            if (r == rows.length - 1) {
+                if (height < chatdivheight) {
+                    remainingheight = chatdivheight - height;
+                    console.log(remainingheight);
+                    ext.style.height = remainingheight + 'px';
+                };
+            };
+        };*/
+    });
+
+</script>

@@ -47,7 +47,7 @@ angular.module('starter.controllers', [])
             console.log("test");
             $interval(function () {
                 $('select').material_select();
-            },100, 1);
+            }, 100, 1);
 
         };
 
@@ -55,6 +55,9 @@ angular.module('starter.controllers', [])
 
 
         /*FUNCTIONS*/
+
+    })
+    .controller('otpCtrl', function ($scope, $stateParams) {
 
     })
     .controller('PlaylistsCtrl', function ($scope, $interval) {
@@ -146,19 +149,126 @@ angular.module('starter.controllers', [])
     })
 
 .controller('PlaylistCtrl', function ($scope, $stateParams) {
+        $scope.usertypes = [
+            {
+                id: 1,
+                'type': 'teacher',
+                'image': 'img/teacher.png'
+        },
+            {
+                id: 2,
+                'type': 'inhouse',
+                'image': 'img/inhouse.png'
+        },
+            {
+                id: 3,
+                'type': 'non inhouse',
+                'image': 'img/noninhouse.png'
+        }
+    ];
+        $scope.answers = [
+            {
+                'id': 1,
+                'userid': 1,
+                'usertype': 1,
+                'username': 'Atitthya Saikia',
+                'time': '',
+                'answer': "What does the fox say ? What does the fox say ? What does the ofx say ?",
+                'verified': true,
+                'image': 'ionic.jpg'
 
+        },
+            {
+                'id': 2,
+                'userid': 2,
+                'usertype': 2,
+                'username': 'Abhay Amin',
+                'time': '',
+                'answer': "What does the fox say ? What does the fox say ? What does the ofx say ?",
+                'verified': true,
+                'image': 'ionic.jpg'
+
+        },
+            {
+                id: 3,
+                'userid': 3,
+                'usertype': 3,
+                'username': 'Omkar Kulkarni',
+                'time': '',
+                'answer': "What does the fox say ? What does the fox say ? What does the ofx say ?",
+                'verified': false,
+                'image': ''
+
+        },
+            {
+                id: 4,
+                'userid': 2,
+                'usertype': 2,
+                'username': 'Shravan Shetty',
+                'time': '',
+                'answer': "What does the fox say ? What does the fox say ? What does the ofx say ?",
+                'verified': false,
+                'image': ''
+
+        }
+  ];
     })
-    .controller('standardCtrl', function ($scope, $stateParams) {
+    .controller('standardCtrl', function ($scope, $stateParams, $location) {
 
+
+        /*ROUTING*/
+        $scope.gotoquestions = function () {
+            $location.path('#/app/playllists');
+        };
     })
     .controller('feedbackCtrl', function ($scope, $stateParams) {
 
     })
-    .controller('profileCtrl', function ($scope, $stateParams, $location) {
+    .controller('profileCtrl', function ($scope, $stateParams, $location, $interval, $ionicPopup) {
 
         /*ROUTING*/
         $scope.gotoquestionsasked = function () {
             $location.path("/app/playlists");
+        };
+
+        /*SCENE CHANGES*/
+        $scope.editprofile = false;
+
+        $scope.editmode = function () {
+            $scope.editprofile = !$scope.editprofile;
+
+            /*Initialize Select*/
+            $interval(function () {
+                $('select').material_select();
+            }, 100, 1);
+        };
+
+        /*CHANGE PASSWORD*/
+        // An elaborate, custom popup
+        $scope.changepassmodal = function () {
+
+            passpopup = $ionicPopup.show({
+                templateUrl: 'templates/changepassword.html',
+                cssClass: 'passpopup',
+                scope: $scope
+            });
+        };
+        $scope.hidepasswordpopup = function () {
+            passpopup.close();
+        };
+
+        /*CHANGE NUMBER*/
+        // An elaborate, custom popup
+        $scope.changenummodal = function () {
+
+            numpopup = $ionicPopup.show({
+                templateUrl: 'templates/changenumber.html',
+                cssClass: 'passpopup',
+                scope: $scope
+            });
+        };
+        $scope.hidenumpopup = function () {
+            numpopup.close();
         };
 
 
@@ -169,4 +279,9 @@ angular.module('starter.controllers', [])
     .controller('askCtrl', function ($scope, $stateParams) {})
     .controller('filterCtrl', function ($scope, $stateParams) {})
     .controller('chatlistCtrl', function ($scope, $stateParams) {})
-    .controller('chatCtrl', function ($scope, $stateParams) {});
+
+.controller('chatCtrl', function ($scope, $stateParams) {
+    $scope.getpercent = function () {
+
+    };
+});
