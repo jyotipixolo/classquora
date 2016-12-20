@@ -2,56 +2,76 @@
 
 /*REUSABLES*/
 
+.navbtn::before {
+    font-size: 26px !important;
+}
+
 .questionslist {
     margin-bottom: 90px !important;
 }
+
 .answereddiv {
-    font-size: 0.9em !important;
+    font-size: 0.8em !important;
     background-color: rgba(3, 189, 214, 0.19);
-    color: #03bdd6;
+    color: @statusbarcolor;
     padding: 4.1%;
-    width: 120%;
-    border-radius: 5px;
+    /* width: 120%; */
+    border-radius: 4px;
 }
+
 .questionimagediv {
     height: 80px;
     overflow: hidden;
     text-align: center;
-    border: @greycolor solid 1px;
 }
+
 .questionimage {
+    padding-left: 2%;
     max-width: 100%;
 }
+
+.questionuserimage {
+    margin-top: -4px;
+}
+
 .timetext {
     color: @darkgreycolor;
     margin-top: 3%;
     font-size: 0.8em;
     font-weight: 600;
 }
+
 .questionuser {
-    font-size: 1.16em !important;
-    line-height: 27px;
+    font-size: 1.25em !important;
+    line-height: 24px;
     padding: 2%;
     display: inline-flex;
 }
+
 .questionsubject {
-    line-height: 34px;
-    font-size: 0.9em !important;
+    line-height: 39px;
+    font-size: 0.7em !important;
+    float: right;
 }
+
 .questionsubjdiv {
     margin-left: -6%;
 }
+
 .questionbookmark {
-    font-size: 1.5em !important;
-    line-height: 40px;
+    font-size: 1.2em !important;
+    line-height: 49px;
 }
+
 .bottomtabimages {
     height: 50px;
     line-height: 78px;
 }
+
 .bottomimagestab {
     height: 55px;
 }
+
 .bottomstabs {
     height: 68px;
     position: fixed;
@@ -60,6 +80,7 @@
     background-color: white;
     border-top: 1px solid @darkgreycolor;
 }
+
 .floatinginnerbuttontext {
     margin-left: -58px;
     margin-top: 5px;
@@ -72,28 +93,38 @@
     padding-right: 22%;
     line-height: 20px;
 }
+
 .floatinginnerbuttontextask {
     margin-left: -129px;
 }
-.fliterfloat i{
+
+.fliterfloat i {
     font-size: 1.5em !important;
 }
-.askfloat i{
+
+.askfloat i {
     font-size: 1.9em !important;
 }
+
 .floatoverlay {
     z-index: 10;
     position: absolute;
     transition: 0.3s linear;
 }
+
 .floatoverlaycolor {
     width: 100%;
     height: 100%;
     background-color: rgba(17, 17, 17, 0.65);
 }
+
+.mainfloaticon {
+    //line-height: 51px !important;
+}
+
 .headersearchbox {
     border: 0px !important;
-    height: 30px !important;
+    height: 29px !important;
     border-radius: 10px !important;
     width: 70% !important;
     font-size: 1.1em !important;
@@ -101,23 +132,43 @@
     margin-right: 15px !important;
     color: white !important;
     padding-left: 2% !important;
+    margin-top: 6px !important;
 }
+
+.headersearchbox::-webkit-input-placeholder {
+    color: white !important;
+}
+
 .chaptersdiv {
     position: fixed;
     width: 100%;
-    bottom: 89px;
+    bottom: 118px;
     height: 200px;
     overflow: scroll;
     /* border-top: 2px solid grey; */
     box-shadow: 2px -1px 8px rgba(0, 0, 0, 0.41);
     z-index: 999;
 }
+
 .chapterbuttons {
     position: fixed;
-    bottom: 80px;
+    bottom: 67px;
     background-color: white;
     z-index: 10;
 }
+
+.questiontext {
+    padding-left: 2%;
+}
+
+.questionsmarginfilterbar {
+    margin-bottom: 68px !important;
+}
+
+.questionsmarginchaptersbar {
+    margin-bottom: 268px !important;
+}
+
 
 /*MENU*/
 
@@ -126,23 +177,28 @@
     margin-top: 0px !important;
     margin-bottom: 0px !important;
 }
+
 .menutext {
     font-size: 14px;
     color: @lightblack;
     background-color: @lightgreycolor;
     border-width: 0px !important;
 }
+
 .menuicons {
     font-size: 28px;
     color: @lightblack;
 }
+
 .menuprofile {
     padding: 1%;
     border-bottom: 1px @greycolor solid;
 }
+
 .menuprofileemail {
     color: @lightblack;
 }
+
 
 /*PROFILE*/
 
@@ -150,15 +206,18 @@
     border-bottom: 1px solid @greycolor;
     box-shadow: 0 2px 8px @greycolor;
 }
+
 .profilename {
     font-size: 1.5em;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
 }
+
 .spacing7 {
     margin-bottom: 7px;
     margin-top: 7px;
 }
+
 .changenumberbtn {
     float: right;
     padding: 2% !important;
@@ -169,13 +228,16 @@
     font-weight: 600;
     border-radius: 10px !important;
 }
+
 .phnumberdown {
     vertical-align: sub;
 }
+
 .profileeditimput {
     width: 84%;
     display: inline-block;
 }
+
 ;
 
 /*PASSWORD*/
@@ -183,6 +245,7 @@
 .passpopup .popup {
     width: 100%;
 }
+
 .passlockimage {
     position: absolute;
     width: 12%;
@@ -190,10 +253,12 @@
     left: 42%;
     background-color: white;
 }
+
 .passheaddiv {
     border-bottom: 2px solid @darkbluecolor;
     padding-bottom: 20px;
 }
+
 
 /*NUMBER*/
 
@@ -203,29 +268,35 @@
     width: 60px !important;
 }
 
+
 /*FILTER*/
 
 .filtersubjectstabs {
     position: initial !important;
 }
+
 .filterchapters {
     position: initial !important;
     margin-top: 10px !important;
     height: 170px !important;
 }
+
 .filterchapterlist {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
 .otherfiltersdiv {
     border-top: 1px solid @darkgreycolor;
     margin-bottom: 60px !important;
 }
+
 .otherfilterslist {
     border: 0px !important;
     padding-bottom: 0px !important;
     padding-top: 10px !important;
 }
+
 .filterokdiv {
     padding-right: 10px;
     position: fixed;
@@ -235,10 +306,12 @@
     border-top: 1px solid @darkgreycolor;
     padding-top: 5px;
 }
+
 .otherfilterslabel {
     font-size: 1.2em !important;
     color: #383636;
 }
+
 
 /*REGISTERPAGE*/
 
@@ -246,11 +319,13 @@
     height: 496px !important;
     padding: 2%;
 }
+
 .regdrops .select-dropdown {
     margin-bottom: 0px !important;
     font-size: 1.4em !important;
     color: #9e9e9e;
 }
+
 
 /*CHAT LIST*/
 
@@ -259,10 +334,12 @@
     margin-top: 2% !important;
     display: inline-block;
 }
+
 .chattime {
     font-size: 0.8em !important;
     margin-top: 4% !important;
 }
+
 
 /*CHAT*/
 
@@ -274,6 +351,7 @@
     padding: 3%;
     margin-bottom: 5px;
 }
+
 .rightmidmsg {
     display: -webkit-inline-box;
     background-color: @color1;
@@ -283,6 +361,7 @@
     padding: 3%;
     margin-bottom: 5px;
 }
+
 .rightbottommsg {
     display: -webkit-inline-box;
     background-color: @color1;
@@ -291,6 +370,7 @@
     padding: 3%;
     margin-bottom: 5px;
 }
+
 .lefttopmsg {
     display: -webkit-inline-box;
     background-color: @greycolor;
@@ -299,6 +379,7 @@
     padding: 3%;
     margin-bottom: 5px;
 }
+
 .leftmidmsg {
     display: -webkit-inline-box;
     background-color: @greycolor;
@@ -308,6 +389,7 @@
     padding: 3%;
     margin-bottom: 5px;
 }
+
 .leftbottommsg {
     display: -webkit-inline-box;
     background-color: @greycolor;
@@ -316,16 +398,19 @@
     padding: 3%;
     margin-bottom: 5px;
 }
+
 .chatuserimage {
     position: relative;
     top: 82%;
     width: 120%;
 }
+
 .chatdiv {
     height: 93%;
     overflow-x: scroll;
     position: relative;
 }
+
 
 /*STANDARD*/
 
@@ -340,6 +425,7 @@
     z-index: 5;
     top: 2px;
 }
+
 .standardbox {
     border: 3px solid @color1;
     height: 150px;
@@ -349,11 +435,13 @@
     margin-right: auto;
     margin-top: 20%;
 }
+
 .standardnumber {
     font-size: 8em;
     margin-bottom: -8px;
     color: @color1;
 }
+
 
 /*ASK A QUESTION*/
 
@@ -364,17 +452,20 @@
     font-size: 1.2em;
     font-style: italic;
 }
+
 .takepictureicon {
     font-size: 3em;
     margin-left: 10px;
     vertical-align: middle;
 }
+
 .postbutton {
     float: right;
     width: 30%;
     font-weight: 600;
     font-size: 1.5em;
 }
+
 
 /*ANSWERS*/
 
@@ -385,6 +476,7 @@
     bottom: 0px;
     width: 100%;
 }
+
 .typeanswerinput {
     width: 68% !important;
     display: -webkit-inline-box !important;
@@ -393,13 +485,16 @@
     padding: 0px !important;
     max-height: 400px;
 }
+
 .typeanswerinput:focus {
     box-shadow: 0px 0px 0px #fff !important;
 }
+
 .answertexticon {
     bottom: 0px;
     position: fixed;
 }
+
 
 /*OTP*/
 
@@ -408,14 +503,17 @@
     height: 40%;
     margin-top: 20%;
 }
+
 .otppencil::before {
     line-height: 32px !important;
     font-size: 17px !important;
 }
+
 .otppencil {
     min-height: 10px;
     line-height: 0px;
 }
+
 .otpinput:focus {
     box-shadow: 0px 0px 0px #fff !important;
 }

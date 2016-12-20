@@ -138,13 +138,84 @@ angular.module('starter.controllers', [])
         }
   ];
 
-        $scope.checkoverlay = function () {
 
+        /*STATES*/
+
+        /*SUBJECT FILTER*/
+
+        /*INITIALIZATIONS*/
+        $scope.subjects = [{
+            'id': '1',
+            'name': 'Physics',
+            'isactive': true,
+            'active': 'physics-active.png',
+            'inactive': 'physics.png'
+    }, {
+            'id': '2',
+            'name': 'Chemistry',
+            'isactive': true,
+            'active': 'chemistry-active.png',
+            'inactive': 'chemistry.png'
+    }, {
+            'id': '3',
+            'name': 'Biology',
+            'isactive': true,
+            'active': 'biology-active.png',
+            'inactive': 'biology.png'
+    }, {
+            'id': '4',
+            'name': 'Maths',
+            'isactive': true,
+            'active': 'maths-active.png',
+            'inactive': 'maths.png'
+    }];
+
+
+
+        $scope.showchapters = false;
+        $scope.filterapplied = false;
+        $scope.selectedsubject;
+        $scope.dummychapterprefix = "";
+
+        $scope.selectsubject = function (index) {
+
+
+            if ($scope.showchapters) {
+                if ($scope.selectedsubject == index) {
+                    $scope.showchapters = false;
+                }
+            } else {
+                $scope.showchapters = true;
+            };
+
+            $scope.dummychapterprefix = $scope.subjects[index].name;
+
+            $scope.selectedsubject = index;
+            
+            for(var s=0; s<$scope.subjects.length; s++){
+                
+            };
+
+
+
+            $scope.subjects[index].isactive = true;
+
+            /*get chapters*/
+            var getchapterssuccess = function (data, status) {
+                $scope.chapters = data;
+            };
+            var getchapterserror = function (data, status) {
+                $scope.chapters = data;
+            };
+            //$scope.getchapters($scope.subjects[index].id).success(getchapterssuccess).error(getchapterserror);
+        };
+
+        /*FLOAT BUTTON*/
+        $scope.checkoverlay = function () {
             $interval(function () {
                 console.log($('#floatbtn').hasClass('active'));
                 $scope.floatactive = $('#floatbtn').hasClass('active');
             }, 200, 1);
-
         };
     })
 
@@ -212,6 +283,8 @@ angular.module('starter.controllers', [])
 
         }
   ];
+
+
     })
     .controller('standardCtrl', function ($scope, $stateParams, $location) {
 

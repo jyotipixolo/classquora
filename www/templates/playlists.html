@@ -4,29 +4,29 @@
             <button class="button button-icon button-clear ion-android-more-vertical" menu-toggle="left">
             </button>
         </div>
-        <input type="text" class="secondarybg marginbottom0 headersearchbox">
+        <input type="text" placeholder="Search" class="secondarybg marginbottom0 headersearchbox">
         <div class="buttons">
-            <button class="button button-icon button-clear icon-filter" href="#/app/filter">
+            <button class="button button-icon button-clear icon-filter navbtn" href="#/app/filter">
             </button>
-            <button class="button button-icon button-clear icon-drawer-ask-a-questn" href="#/app/ask">
+            <button class="button button-icon button-clear icon-drawer-ask-a-questn navbtn" href="#/app/ask">
             </button>
-            <button class="button button-icon button-clear icon-chat-icon" href="#/app/chatlist">
+            <button class="button button-icon button-clear icon-chat-icon navbtn" href="#/app/chatlist">
             </button>
         </div>
     </ion-header-bar>
     <ion-content class="has-header">
 
-        <div class="list marginbottom0 questionslist">
+        <div class="list questionslist questionsmarginfilterbar">
 
             <a class="item" ng-repeat="question in questions" style="padding: 0px;" href="#/app/playlists/:1">
 
                 <div class="row marginbottom0">
                     <div class="col col-10 textcenter">
-                        <img src="{{usertypes[question.usertype - 1].image}}" width="125%">
+                        <img src="{{usertypes[question.usertype - 1].image}}" width="135%" class="questionuserimage">
                     </div>
                     <div class="col col-67">
                         <h2 class="questionuser">{{question.username}}</h2>
-                        <span class="timetext">1 hour ago</span>
+                        <span class="timetext">1 h ago</span>
                     </div>
                     <div class="col questionsubjdiv">
                         <h6 class="primarycolor questionsubject">{{question.subject}}</h6>
@@ -36,24 +36,24 @@
                         <!--class="ion-android-bookmark bluecolor"-->
                     </div>
                 </div>
-                <div class="row">
+                <div class="row marginbottom0">
                     <div class="col col-90 col-offset-10">
-                        <p class="normalwhitespace">{{question.question}}
+                        <p class="normalwhitespace questiontext">{{question.question}}
                         </p>
                     </div>
 
                 </div>
 
                 <div class="row marginbottom0">
-                    <div class="col questionimagediv" ng-if="question.image != ''">
+                    <div class="col col-90 col-offset-10 questionimagediv" ng-if="question.image != ''">
                         <img src="img/{{question.image}}" class="questionimage">
                     </div>
                 </div>
                 <div class="row marginbottom0">
-                    <div class="col col-20 col-offset-67 textcenter paddingbottom0">
+                    <div class="col col-offset-67 textcenter paddingbottom0">
                         <h6 class="answereddiv" ng-if="question.answers > 0">Answered</h6>
                     </div>
-                    <div class="col textcenter paddingbottom0">
+                    <div class="col col-10 textcenter paddingbottom0">
                         <i class="icon ion-checkmark-circled primarycolor fontsize12" ng-if="question.verified"></i>
                     </div>
                 </div>
@@ -66,12 +66,12 @@
     </ion-content>
 
 
-    <div class="chaptersdiv" ng-if="subjectselect">
-        <ul class="list" style="margin-bottom: 30px;">
+    <div class="chaptersdiv" ng-if="showchapters">
+        <ul class="list marginbottom0">
             <li class="item" ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]">
                 <p>
-                    <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-                    <label for="filled-in-box">Chapter {{i}}</label>
+                    <input type="checkbox" class="filled-in" id="chapter{{i}}" checked="checked" />
+                    <label for="chapter{{i}}">{{dummychapterprefix}} Chapter {{i}}</label>
                 </p>
             </li>
 
@@ -90,32 +90,15 @@
 
     <div class="bottomstabs">
         <div class="row marginbottom0 paddingbottom0 bottomimagestab paddingtop0">
-            <div class="col col-25 textcenter bottomtabimages paddingbottom0 paddingtop0">
-                <img src="img/physics-active.png" width="40%">
-
-            </div>
-            <div class="col col-25 textcenter bottomtabimages paddingbottom0 paddingtop0">
-                <img src="img/chemistry-active.png" width="40%">
-
-            </div>
-            <div class="col col-25 textcenter bottomtabimages paddingbottom0 paddingtop0">
-                <img src="img/biology-active.png" width="40%">
-
-            </div>
-            <div class="col col-25 textcenter bottomtabimages paddingbottom0 paddingtop0">
-                <img src="img/maths-active.png" width="40%">
-
+            <div class="col col-25 textcenter bottomtabimages paddingbottom0 paddingtop0" ng-repeat="subject in subjects" ng-click="selectsubject($index)">
+                <img src="img/{{subject.active}}" width="40%" ng-if="subject.isactive">
+                <img src="img/{{subject.inactive}}" width="40%" ng-if="!subject.isactive">
             </div>
         </div>
         <div class="row marginbottom0 paddingbottom0">
-            <div class="col col-25 textcenter paddingtop0">
-                <h6 class="margin0">Physics</h6></div>
-            <div class="col col-25 textcenter paddingtop0">
-                <h6 class="margin0">Chemistry</h6></div>
-            <div class="col col-25 textcenter paddingtop0">
-                <h6 class="margin0">Biology</h6></div>
-            <div class="col col-25 textcenter paddingtop0">
-                <h6 class="margin0">Maths</h6></div>
+            <div class="col col-25 textcenter paddingtop0" ng-repeat="subject in subjects">
+                <h6 class="margin0">{{subject.name}}</h6>
+            </div>
         </div>
 
     </div>
@@ -124,7 +107,7 @@
 
     <div id="floatbtn" class="fixed-action-btn vertical click-to-toggle">
         <a class="btn-floating btn-large primarybg" ng-class="{'rotate45':floatactive}" ng-click="checkoverlay()">
-            <i class="ion-ios-plus-empty fontsize34">menu</i>
+            <i class="ion-ios-plus-empty fontsize34 mainfloaticon">menu</i>
         </a>
         <ul>
             <li>
