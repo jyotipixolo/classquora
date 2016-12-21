@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function ($scope, $location, $timeout, $ionicSideMenuDelegate) {
 
         // With the new view caching in Ionic, Controllers are only called
         // when they are recreated or on app start, instead of every page change.
@@ -9,24 +9,9 @@ angular.module('starter.controllers', [])
         //$scope.$on('$ionicView.enter', function(e) {
         //});
 
-        // Form data for the login modal
-        $scope.loginData = {};
-
-        // Create the login modal that we will use later
-        $ionicModal.fromTemplateUrl('templates/login.html', {
-            scope: $scope
-        }).then(function (modal) {
-            $scope.modal = modal;
-        });
-
-        // Triggered in the login modal to close it
-        $scope.closeLogin = function () {
-            $scope.modal.hide();
-        };
-
-        // Open the login modal
-        $scope.login = function () {
-            $scope.modal.show();
+        $scope.gotoprofile = function () {
+            $ionicSideMenuDelegate.toggleLeft();
+            $location.path("/app/profile");
         };
 
         // Perform the login action when the user submits the login form
@@ -40,13 +25,19 @@ angular.module('starter.controllers', [])
             }, 1000);
         };
     })
-    .controller('loginCtrl', function ($scope, $stateParams, $interval) {
+    .controller('loginCtrl', function ($scope, $stateParams, $interval, $ionicSideMenuDelegate) {
+
+        /*CONFIGURATONS*/
+        $ionicSideMenuDelegate.canDragContent(false);
 
         /*ROUTING*/
         $scope.gotoregistertab = function () {
             console.log("test");
             $interval(function () {
                 $('select').material_select();
+                console.log($('.select-wrapper .caret'));
+                $('.select-wrapper .caret').empty();
+                $('.select-wrapper .caret').addClass('icon-caret-down');
             }, 100, 1);
 
         };
@@ -149,13 +140,67 @@ angular.module('starter.controllers', [])
             'name': 'Physics',
             'isactive': true,
             'active': 'physics-active.png',
-            'inactive': 'physics.png'
+            'inactive': 'physics.png',
+            'chapters': [
+                {
+                    'chapterid': 1,
+                    'chaptername': 'Chapter 1',
+                    'selected': false
+                },
+                {
+                    'chapterid': 2,
+                    'chaptername': 'Chapter 2',
+                    'selected': false
+                },
+                {
+                    'chapterid': 3,
+                    'chaptername': 'Chapter 3',
+                    'selected': false
+                },
+                {
+                    'chapterid': 4,
+                    'chaptername': 'Chapter 4',
+                    'selected': false
+                },
+                {
+                    'chapterid': 5,
+                    'chaptername': 'Chapter 5',
+                    'selected': false
+                }
+            ]
     }, {
             'id': '2',
             'name': 'Chemistry',
             'isactive': true,
             'active': 'chemistry-active.png',
-            'inactive': 'chemistry.png'
+            'inactive': 'chemistry.png',
+            'chapters': [
+                {
+                    'chapterid': 1,
+                    'chaptername': 'Chemistry 1',
+                    'selected': false
+                },
+                {
+                    'chapterid': 2,
+                    'chaptername': 'Chemistry 2',
+                    'selected': false
+                },
+                {
+                    'chapterid': 3,
+                    'chaptername': 'Chemistry 3',
+                    'selected': false
+                },
+                {
+                    'chapterid': 4,
+                    'chaptername': 'Chemistry 4',
+                    'selected': false
+                },
+                {
+                    'chapterid': 5,
+                    'chaptername': 'Chemistry 5',
+                    'selected': false
+                }
+            ]
     }, {
             'id': '3',
             'name': 'Biology',
@@ -174,8 +219,29 @@ angular.module('starter.controllers', [])
 
         $scope.showchapters = false;
         $scope.filterapplied = false;
-        $scope.selectedsubject;
+        $scope.selectedsubject = null;
         $scope.dummychapterprefix = "";
+        $scope.allchapsbutton = true;
+
+        $scope.selectallchaps = function () {
+            for (var c = 0; c < $scope.chapters.length; c++) {
+                $scope.chapters[c].selected = true;
+            };
+            $scope.allchapsbutton = false;
+        };
+        $scope.addtochapfilter = function () {
+            $scope.allchapsbutton = false;
+            for (var c = 0; c < $scope.chapters.length; c++) {
+                if ($scope.chapters[c].selected == false) {
+                    $scope.allchapsbutton = true;
+                };
+            };
+        };
+
+        $scope.removefilters = function () {
+            $scope.showchapters = false;
+            $scope.selectedsubject = null;
+        };
 
         $scope.selectsubject = function (index) {
 
@@ -183,17 +249,24 @@ angular.module('starter.controllers', [])
             if ($scope.showchapters) {
                 if ($scope.selectedsubject == index) {
                     $scope.showchapters = false;
-                }
+                    $scope.selectedsubject = null;
+                } else {
+                    $scope.chapters = $scope.subjects[index].chapters;
+                    $scope.selectedsubject = index;
+                };
             } else {
                 $scope.showchapters = true;
+
+                $scope.chapters = $scope.subjects[index].chapters;
+                $scope.selectedsubject = index;
             };
 
-            $scope.dummychapterprefix = $scope.subjects[index].name;
 
-            $scope.selectedsubject = index;
-            
-            for(var s=0; s<$scope.subjects.length; s++){
-                
+
+
+
+            for (var s = 0; s < $scope.subjects.length; s++) {
+
             };
 
 
@@ -237,6 +310,21 @@ angular.module('starter.controllers', [])
                 'image': 'img/noninhouse.png'
         }
     ];
+
+        $scope.question = {
+            'id': 1,
+            'userid': 1,
+            'usertype': 1,
+            'username': 'Mayur Nalwala',
+            'time': '',
+            'subject': 'Physics',
+            'bookmarked': true,
+            'question': "What does the fox say ? What does the fox say ? What does the ofx say ?",
+            'answers': 2,
+            'verified': true,
+            'image': 'ionic.jpg'
+
+        };
         $scope.answers = [
             {
                 'id': 1,
@@ -286,12 +374,16 @@ angular.module('starter.controllers', [])
 
 
     })
-    .controller('standardCtrl', function ($scope, $stateParams, $location) {
+    .controller('standardCtrl', function ($scope, $stateParams, $location, $ionicSideMenuDelegate) {
+
+        /*CONFIGURATIONS*/
+        $ionicSideMenuDelegate.canDragContent(true);
+
 
 
         /*ROUTING*/
         $scope.gotoquestions = function () {
-            $location.path('#/app/playllists');
+            $location.path('/app/playlists');
         };
     })
     .controller('feedbackCtrl', function ($scope, $stateParams) {
@@ -313,6 +405,9 @@ angular.module('starter.controllers', [])
             /*Initialize Select*/
             $interval(function () {
                 $('select').material_select();
+                console.log($('.select-wrapper .caret'));
+                $('.select-wrapper .caret').empty();
+                $('.select-wrapper .caret').addClass('icon-caret-down');
             }, 100, 1);
         };
 

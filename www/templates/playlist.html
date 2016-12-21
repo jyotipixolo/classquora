@@ -6,47 +6,47 @@
         </div>
         <h1 class="title">Question</h1>
     </ion-header-bar>
-    <ion-content class="has-header">
+    <ion-content class="has-header" style="bottom: 42px;">
 
         <div class="list marginbottom0 questionslist">
 
-            <a class="item" style="padding: 0px;">
+            <a class="item" style="padding: 0px;" disabled>
 
-                <div class="row marginbottom0">
+                <div class="row marginbottom0 questionrow">
                     <div class="col col-10 textcenter">
-                        <img src="img/inhouse.png" width="125%">
+                        <img src="{{usertypes[question.usertype - 1].image}}" width="139%" class="questionuserimage">
                     </div>
                     <div class="col col-67">
-                        <h2 class="questionuser">Mayur Nalwala</h2>
-                        <span class="timetext">1 hour ago</span>
+                        <h2 class="questionuser helveticafont">{{question.username}}</h2>
+                        <span class="timetext">1h ago</span>
                     </div>
                     <div class="col questionsubjdiv">
-                        <h6 class="primarycolor questionsubject">Physics</h6>
+                        <h6 class="primarycolor questionsubject helveticafont">{{question.subject}}</h6>
                     </div>
                     <div class="col col-10">
                         <i class="icon icon-bookmark-active questionbookmark"></i>
                         <!--class="ion-android-bookmark bluecolor"-->
                     </div>
                 </div>
-                <div class="row">
+                <div class="row marginbottom0">
                     <div class="col col-90 col-offset-10">
-                        <p class="normalwhitespace">What does the fox say ?
+                        <p class="normalwhitespace questiontext helveticafont">{{question.question}}
                         </p>
                     </div>
 
                 </div>
 
                 <div class="row marginbottom0">
-                    <div class="col questionimagediv" ng-if="question.image != ''">
-                        <img src="img/ionic.png" class="questionimage">
+                    <div class="col col-90 col-offset-10 questionimagediv" ng-if="question.image != ''">
+                        <img src="img/{{question.image}}" class="questionimage">
                     </div>
                 </div>
                 <div class="row marginbottom0">
-                    <div class="col col-20 col-offset-67 textcenter paddingbottom0">
-                        <h6 class="answereddiv" ng-if="3 > 0">Answered</h6>
+                    <div class="col col-offset-67 textcenter paddingbottom0">
+                        <h6 class="answereddiv helveticafont" ng-if="question.answers > 0">Answered</h6>
                     </div>
-                    <div class="col textcenter paddingbottom0">
-                        <i class="icon ion-checkmark-circled primarycolor fontsize12" ng-if="true"></i>
+                    <div class="col col-10 textcenter paddingbottom0">
+                        <i class="icon ion-checkmark-circled primarycolor fontsize12 floatleft" ng-if="question.verified"></i>
                     </div>
                 </div>
 
@@ -54,9 +54,9 @@
 
         </div>
 
-        <div class="row greybg marginbottom0">
-            <div class="col col-10"></div>
-            <div class="col col-90">
+        <div class="row greybg marginbottom0 paddingbottom0 paddingtop0">
+            <div class="col col-10 "></div>
+            <div class="col col-90 numberofanswers">
                 <p class="marginbottom0 lightblackcolor fontsize12">12 Answers</p>
             </div>
 
@@ -64,39 +64,40 @@
 
         <div class="list marginbottom0 questionslist">
 
-            <a class="item" href="#" ng-repeat="answer in answers" style="padding: 0px;">
+            <a class="item" style="padding: 0px;" disabled ng-repeat="answer in answers">
 
-                <div class="row marginbottom0">
+                <div class="row marginbottom0 questionrow">
                     <div class="col col-10 textcenter">
-                        <img src="{{usertypes[answer.usertype - 1].image}}" width="125%">
+                        <img src="{{usertypes[answer.usertype - 1].image}}" width="139%" class="questionuserimage">
                     </div>
                     <div class="col col-67">
-                        <h2 class="questionuser">{{answer.username}}</h2>
-                        <span class="timetext">1 hour ago</span>
+                        <h2 class="questionuser helveticafont">{{answer.username}}</h2>
+                        <span class="timetext">1h ago</span>
                     </div>
                     <div class="col questionsubjdiv">
                     </div>
                     <div class="col col-10">
                     </div>
                 </div>
-                <div class="row">
+                <div class="row marginbottom0">
                     <div class="col col-90 col-offset-10">
-                        <p class="normalwhitespace">{{answer.answer}}
+                        <p class="normalwhitespace questiontext helveticafont">{{answer.answer}}
                         </p>
                     </div>
 
                 </div>
 
                 <div class="row marginbottom0">
-                    <div class="col questionimagediv" ng-if="answer.image != ''">
+                    <div class="col col-90 col-offset-10 questionimagediv" ng-if="answer.image != ''">
                         <img src="img/{{answer.image}}" class="questionimage">
                     </div>
                 </div>
                 <div class="row marginbottom0">
-                    <div class="col col-20 col-offset-67 textcenter paddingbottom0">
+                    <div class="col col-offset-67 textcenter paddingbottom0">
+                        
                     </div>
-                    <div class="col textcenter paddingbottom0">
-                        <i class="icon ion-checkmark-circled primarycolor fontsize12" ng-if="answer.verified"></i>
+                    <div class="col col-10 textcenter paddingbottom0">
+                        <i class="icon ion-checkmark-circled primarycolor fontsize12 floatleft" ng-if="answer.verified"></i>
                     </div>
                 </div>
 
@@ -108,17 +109,11 @@
     </ion-content>
 
     <div class="typeanswerdiv ">
-        <div class="input-field z-depth-2">
+        <div class="input-field z-depth-4 margintop0">
             <textarea placeholder="Type Your Answer" id="answer" class="materialize-textarea marginbottom0 typeanswerinput"></textarea>
-            <a class="button button-icon icon ion-settings primarycolor answertexticon"></a>
-            <a class="button button-icon icon ion-camera primarycolor answertexticon" style="right: 50px;"></a>
-            <a class="button button-icon icon ion-settings primarycolor answertexticon" style="right: 10px;"></a>
+            <a class="button button-icon icon icon-gallery primarycolor answertexticon"></a>
+            <a class="button button-icon icon icon-camera primarycolor answertexticon" style="right: 50px;"></a>
+            <a class="button button-icon icon icon-send-plane-blue primarycolor answertexticon" style="right: 10px;"></a>
         </div>
-        <!--<div class="input-field z-depth-2">
-            <input placeholder="Type Your Answer" id="answer" type="text" class="validate marginbottom0 typeanswerinput">
-            <a class="button button-icon icon ion-settings primarycolor"></a>
-            <a class="button button-icon icon ion-settings primarycolor"></a>
-            <a class="button button-icon icon ion-settings primarycolor"></a>
-        </div>-->
     </div>
 </ion-view>

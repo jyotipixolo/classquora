@@ -1,10 +1,10 @@
 <div class="z-depth-4">
     <div class="row passheaddiv">
         <h5 class="marginauto lightblackcolor">Change Number</h5>
-        <img src="img/lock.png" class="passlockimage">
+        <img src="img/profile/changephone.png" class="passlockimage">
     </div>
-
-    <div class="row">
+    <div class="row"></div>
+    <div class="row marginbottom0">
         <div class="input-field marginauto width40p">
             <input id="code" type="tel" class="validate lightblackcolor noshadow countrycode" value="+91">
         </div>
@@ -12,26 +12,25 @@
             <input id="phone" type="tel" class="validate lightblackcolor noshadow fontsize17" value="9820840946" placeholder="Phone Number">
         </div>
     </div>
-    
-    <div class="row">
-        <a class="waves-effect waves-light btn marginauto darkbluebg borderradius10">Send OTP</a>
-    </div>
-    
-    <hr>
 
     <div class="row">
+        <a class="waves-effect waves-light btn marginauto primarybg borderradius5 boldbutton nouppercase">Send OTP</a>
+    </div>
+
+    <hr>
+
+    <div class="row marginbottom0">
         <h5 class="fontsize12 lightblackcolor marginauto">Verify Your Number</h5>
     </div>
 
     <div class="row">
         <div class="input-field marginauto width65 textcenter">
-            <input id="confirmpassword" type="password" class="validate secondarycolor noshadow">
-            <label for="confirmpassword">Enter OTP</label>
+            <input id="confirmpassword" type="number" class="validate secondarycolor noshadow changepasswordinput" placeholder="Enter OTP" maxlength="6">
         </div>
     </div>
     <div class="row paddingbottom30">
-        <a class="waves-effect waves-light btn marginauto darkbluebg borderradius10" ng-click="hidenumpopup()">Cancel</a>
-        <a class="waves-effect waves-light btn marginauto darkbluebg borderradius10">Verify</a>
+        <a class="waves-effect waves-light btn marginauto darkbluebg borderradius5 boldbutton nouppercase" ng-click="hidenumpopup()">Cancel</a>
+        <a class="waves-effect waves-light btn marginauto darkbluebg borderradius5 boldbutton nouppercase">Verify</a>
     </div>
 
 </div>

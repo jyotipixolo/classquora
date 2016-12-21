@@ -41,9 +41,6 @@
 .icon-back:before {
   content: "\61";
 }
-.icon-bookmark:before {
-  content: "\64";
-}
 .icon-calculator:before {
   content: "\66";
 }
@@ -100,4 +97,25 @@
 }
 .icon-profile:before {
   content: "\6e";
+}
+.icon-bookmark:before {
+  content: "\64";
+}
+.icon-login-password:before {
+  content: "\6f";
+}
+.icon-caret-down:before {
+  content: "\70";
+}
+.icon-login-phone-hollow:before {
+  content: "\71";
+}
+.icon-send-plane-blue:before {
+  content: "\72";
+}
+.icon-camera:before {
+  content: "\73";
+}
+.icon-gallery:before {
+  content: "\74";
 }

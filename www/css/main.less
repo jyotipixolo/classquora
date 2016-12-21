@@ -2,21 +2,31 @@
 
 /*REUSABLES*/
 
+body {
+    .helveticafont;
+}
+
 .navbtn::before {
-    font-size: 26px !important;
+    font-size: 24px !important;
 }
 
 .questionslist {
     margin-bottom: 90px !important;
 }
 
+.questionrow {
+    height: 55px !important;
+}
+
 .answereddiv {
-    font-size: 0.8em !important;
+    font-size: 0.85em !important;
     background-color: rgba(3, 189, 214, 0.19);
-    color: @statusbarcolor;
+    color: #16adb8;
     padding: 4.1%;
+    padding-top: 4px;
     /* width: 120%; */
     border-radius: 4px;
+    padding-bottom: 1px;
 }
 
 .questionimagediv {
@@ -31,14 +41,15 @@
 }
 
 .questionuserimage {
-    margin-top: -4px;
+    margin-top: -7px;
 }
 
 .timetext {
     color: @darkgreycolor;
     margin-top: 3%;
-    font-size: 0.8em;
+    font-size: 0.75em;
     font-weight: 600;
+    font-family: helvetica;
 }
 
 .questionuser {
@@ -59,21 +70,26 @@
 }
 
 .questionbookmark {
-    font-size: 1.2em !important;
-    line-height: 49px;
+    font-size: 1.1em !important;
+    line-height: 50px;
 }
 
 .bottomtabimages {
-    height: 50px;
-    line-height: 78px;
+    height: 44px;
+    line-height: 68px;
 }
 
 .bottomimagestab {
-    height: 55px;
+    height: 45px;
+}
+
+.boldbutton {
+    font-weight: 700 !important;
+    padding-top: 2px !important;
 }
 
 .bottomstabs {
-    height: 68px;
+    height: 57px;
     position: fixed;
     bottom: -0px;
     z-index: 5;
@@ -82,28 +98,40 @@
 }
 
 .floatinginnerbuttontext {
-    margin-left: -58px;
     margin-top: 5px;
     position: absolute;
-    background-color: @greycolor;
-    padding: 10%;
-    font-size: 1.1em;
+    background-color: #e0e0e0;
+    /* padding: 10%; */
     border-radius: 7px;
     padding-left: 22%;
     padding-right: 22%;
+    padding-top: 6px;
+    padding-bottom: 4px;
     line-height: 20px;
+    transition: 0.5s linear;
+    margin-left: -57px;
+}
+
+.opacity0 {
+    opacity: 0;
+}
+
+.opacity1 {
+    opacity: 1;
 }
 
 .floatinginnerbuttontextask {
-    margin-left: -129px;
+    margin-left: -121px;
 }
 
 .fliterfloat i {
-    font-size: 1.5em !important;
+    font-size: 19px !important;
+    padding-top: 2px;
 }
 
 .askfloat i {
-    font-size: 1.9em !important;
+    font-size: 1.8em !important;
+    padding-top: 3px;
 }
 
 .floatoverlay {
@@ -125,14 +153,17 @@
 .headersearchbox {
     border: 0px !important;
     height: 29px !important;
-    border-radius: 10px !important;
+    border-radius: 8px !important;
     width: 70% !important;
     font-size: 1.1em !important;
     margin-left: 15px !important;
     margin-right: 15px !important;
     color: white !important;
-    padding-left: 2% !important;
     margin-top: 6px !important;
+    background: url(../img/search.png) no-repeat scroll 7px 6px;
+    background-size: 17px;
+    padding-left: 30px !important;
+    padding-top: 2px !important;
 }
 
 .headersearchbox::-webkit-input-placeholder {
@@ -142,17 +173,15 @@
 .chaptersdiv {
     position: fixed;
     width: 100%;
-    bottom: 118px;
+    bottom: 111px;
     height: 200px;
     overflow: scroll;
-    /* border-top: 2px solid grey; */
-    box-shadow: 2px -1px 8px rgba(0, 0, 0, 0.41);
     z-index: 999;
 }
 
 .chapterbuttons {
     position: fixed;
-    bottom: 67px;
+    bottom: 56px;
     background-color: white;
     z-index: 10;
 }
@@ -183,6 +212,22 @@
     color: @lightblack;
     background-color: @lightgreycolor;
     border-width: 0px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+}
+
+.menutext i {
+    top: -3px !important;
+}
+
+.questionleftbadge {
+    width: 22px !important;
+    min-width: 0px !important;
+    font-size: 1.2em !important;
+    padding: 0px !important;
+    padding-left: 6px !important;
+    padding-top: 3px !important;
+    margin-top: -6px !important;
 }
 
 .menuicons {
@@ -201,6 +246,11 @@
 
 
 /*PROFILE*/
+
+.profilelefticons {
+    margin-top: -4px;
+    width: 45%;
+}
 
 .profilephotodiv {
     border-bottom: 1px solid @greycolor;
@@ -226,7 +276,7 @@
     height: 30px !important;
     font-size: 0.8em;
     font-weight: 600;
-    border-radius: 10px !important;
+    border-radius: 5px !important;
 }
 
 .phnumberdown {
@@ -235,7 +285,7 @@
 
 .profileeditimput {
     width: 84%;
-    display: inline-block;
+    display: -webkit-inline-box;
 }
 
 ;
@@ -244,13 +294,28 @@
 
 .passpopup .popup {
     width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.passpopup .popup-head {
+    border: 0px !important;
+}
+
+.passpopup .popup-body .z-depth-4 {
+    background-color: white;
+}
+
+.changepasswordinput {
+    .textcenter;
+    .marginauto;
+    width: 65% !important;
 }
 
 .passlockimage {
     position: absolute;
     width: 12%;
     top: 87px;
-    left: 42%;
+    left: 44%;
     background-color: white;
 }
 
@@ -315,8 +380,30 @@
 
 /*REGISTERPAGE*/
 
+.loginbutton {
+    text-transform: initial !important;
+    width: 100% !important;
+    font-size: 1.2em !important;
+    line-height: 40px !important;
+    height: 36px !important;
+    font-weight: 600 !important;
+}
+
+.loginprefixinput {
+    width: 80% !important;
+    margin-left: 16% !important;
+    font-size: 1.2em !important;
+    margin-bottom: 0px !important;
+}
+
+.select-wrapper span.caret {}
+
+.loginbgcolor {
+    background-color: @loginpagecolor !important;
+}
+
 .loginboxregister {
-    height: 496px !important;
+    height: 485px !important;
     padding: 2%;
 }
 
@@ -478,12 +565,15 @@
 }
 
 .typeanswerinput {
-    width: 68% !important;
+    width: 66% !important;
     display: -webkit-inline-box !important;
     border-bottom: 0px !important;
-    font-size: 1.2em !important;
+    font-size: 1.3em !important;
     padding: 0px !important;
     max-height: 400px;
+    padding-top: 3% !important;
+    padding-left: 3% !important;
+    min-height: 2.3rem !important;
 }
 
 .typeanswerinput:focus {
@@ -493,6 +583,15 @@
 .answertexticon {
     bottom: 0px;
     position: fixed;
+}
+
+.answertexticon::before {
+    font-size: 27px !important;
+}
+
+.numberofanswers {
+    padding-top: 6px;
+    padding-bottom: 2px;
 }
 
 

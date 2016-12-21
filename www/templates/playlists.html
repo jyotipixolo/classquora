@@ -20,16 +20,16 @@
 
             <a class="item" ng-repeat="question in questions" style="padding: 0px;" href="#/app/playlists/:1">
 
-                <div class="row marginbottom0">
+                <div class="row marginbottom0 questionrow">
                     <div class="col col-10 textcenter">
-                        <img src="{{usertypes[question.usertype - 1].image}}" width="135%" class="questionuserimage">
+                        <img src="{{usertypes[question.usertype - 1].image}}" width="139%" class="questionuserimage">
                     </div>
                     <div class="col col-67">
-                        <h2 class="questionuser">{{question.username}}</h2>
-                        <span class="timetext">1 h ago</span>
+                        <h2 class="questionuser helveticafont">{{question.username}}</h2>
+                        <span class="timetext">1h ago</span>
                     </div>
                     <div class="col questionsubjdiv">
-                        <h6 class="primarycolor questionsubject">{{question.subject}}</h6>
+                        <h6 class="primarycolor questionsubject helveticafont">{{question.subject}}</h6>
                     </div>
                     <div class="col col-10">
                         <i class="icon icon-bookmark-active questionbookmark"></i>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="row marginbottom0">
                     <div class="col col-90 col-offset-10">
-                        <p class="normalwhitespace questiontext">{{question.question}}
+                        <p class="normalwhitespace questiontext helveticafont">{{question.question}}
                         </p>
                     </div>
 
@@ -51,10 +51,10 @@
                 </div>
                 <div class="row marginbottom0">
                     <div class="col col-offset-67 textcenter paddingbottom0">
-                        <h6 class="answereddiv" ng-if="question.answers > 0">Answered</h6>
+                        <h6 class="answereddiv helveticafont" ng-if="question.answers > 0">Answered</h6>
                     </div>
                     <div class="col col-10 textcenter paddingbottom0">
-                        <i class="icon ion-checkmark-circled primarycolor fontsize12" ng-if="question.verified"></i>
+                        <i class="icon ion-checkmark-circled primarycolor fontsize12 floatleft" ng-if="question.verified"></i>
                     </div>
                 </div>
 
@@ -66,22 +66,22 @@
     </ion-content>
 
 
-    <div class="chaptersdiv" ng-if="showchapters">
+    <div class="chaptersdiv z-depth-5" ng-if="showchapters">
         <ul class="list marginbottom0">
-            <li class="item" ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]">
+            <li class="item" ng-repeat="chap in chapters">
                 <p>
-                    <input type="checkbox" class="filled-in" id="chapter{{i}}" checked="checked" />
-                    <label for="chapter{{i}}">{{dummychapterprefix}} Chapter {{i}}</label>
+                    <input type="checkbox" class="filled-in" id="{{chap.chapterid}}" checked="checked" ng-model="chap.selected" ng-change="addtochapfilter()" />
+                    <label for="{{chap.chapterid}}">{{chap.chaptername}}</label>
                 </p>
             </li>
 
         </ul>
         <div class="row chapterbuttons marginbottom0">
             <div class="col">
-                <a class="waves-effect waves-light btn">All Chapters</a>
+                <a class="waves-effect waves-light btn nouppercase buttonbluebg boldbutton" ng-click="selectallchaps()" ng-disabled="!allchapsbutton">All Chapters</a>
             </div>
             <div class="col">
-                <a class="waves-effect waves-light btn floatright">OK</a>
+                <a class="waves-effect waves-light btn floatright nouppercase buttonbluebg boldbutton" ng-click="removefilters()">OK</a>
             </div>
 
         </div>
@@ -91,8 +91,8 @@
     <div class="bottomstabs">
         <div class="row marginbottom0 paddingbottom0 bottomimagestab paddingtop0">
             <div class="col col-25 textcenter bottomtabimages paddingbottom0 paddingtop0" ng-repeat="subject in subjects" ng-click="selectsubject($index)">
-                <img src="img/{{subject.active}}" width="40%" ng-if="subject.isactive">
-                <img src="img/{{subject.inactive}}" width="40%" ng-if="!subject.isactive">
+                <img src="img/{{subject.active}}" width="32%" ng-if="$index == selectedsubject || selectedsubject==null">
+                <img src="img/{{subject.inactive}}" width="32%" ng-if="$index != selectedsubject && selectedsubject!=null">
             </div>
         </div>
         <div class="row marginbottom0 paddingbottom0">
@@ -111,10 +111,10 @@
         </a>
         <ul>
             <li>
-                <p class="floatinginnerbuttontext">Filter</p> <a class="btn-floating primarybg darken-1 fliterfloat"><i class="icon-filter"></i></a>
+                <p class="floatinginnerbuttontext" ng-class="{'opacity0': !floatactive , 'opacity1':floatactive}">Filter</p> <a class="btn-floating primarybg darken-1 fliterfloat"><i class="icon-filter"></i></a>
             </li>
             <li>
-                <p class="floatinginnerbuttontext floatinginnerbuttontextask">Ask A Question</p>
+                <p class="floatinginnerbuttontext floatinginnerbuttontextask" ng-class="{'opacity0': !floatactive , 'opacity1':floatactive}">Ask A Question</p>
                 <a class="btn-floating primarybg askfloat"><i class="icon-drawer-ask-a-questn"></i></a>
 
             </li>

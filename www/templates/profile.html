@@ -17,7 +17,7 @@
             <div class="row profilephotodiv">
                 <div class="col col-10"></div>
                 <div class="col col-80 textcenter">
-                    <img src="img/teacher.png" width="50%">
+                    <img src="img/teacher.png" width="40%">
                     <h4 class="menuname  lightblackcolor">Mayur Nalwala</h4>
                     <h6 class="lightblackcolor menuprofileemail">in house Student</h6>
                 </div>
@@ -25,9 +25,9 @@
 
             </div>
 
-            <div class="row" ng-class="{'marginbottom0':editprofile}">
+            <div class="row marginbottom0" ng-class="{'marginbottom0':editprofile}">
                 <div class="col col-20 textcenter">
-                    <img src="img/id-card-profile.png" width="50%">
+                    <img src="img/profile/idcard.svg" width="50%">
                 </div>
                 <div class="col col-80 lightblackcolor">
                     <h5 class="lightblackcolor fontsize13 marginbottom12">IH262415</h5>
@@ -47,8 +47,7 @@
                     <!--SCHOOL-->
                     <h5 class="lightblackcolor fontsize13 " ng-if="!editprofile">Fatima High School</h5>
                     <div class="input-field margintop0 profileeditimput" ng-if="editprofile">
-                        <input id="school" type="text" class="validate noshadow marginbottom0">
-                        <label for="school">School</label>
+                        <input id="school" type="text" class="validate noshadow marginbottom0" placeholder="School">
                     </div>
                     <a class="button button-icon icon ion-edit lightblackcolor" ng-if="editprofile"></a>
                 </div>
@@ -56,39 +55,45 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row marginbottom0 marginbottom12">
             <div class="col col-20 textcenter">
-                <img src="img/register-phone.png" width="45%">
+                <img src="img/profile/phone.svg" class="profilelefticons">
             </div>
             <div class="col col-80 lightblackcolor fontsize13">
                 <p class="lightblackcolor displayinline phnumberdown">9773555323</p>
-                <a class="waves-effect waves-light btn primarybg changenumberbtn" ng-if="editprofile" ng-click="changenummodal()">Change</a>
+                <a class="waves-effect waves-light btn primarybg changenumberbtn  boldbutton nouppercase" ng-if="editprofile" ng-click="changenummodal()">Change</a>
             </div>
         </div>
 
-        <div class="row"  ng-class="{'marginbottom0':editprofile}">
+        <div class="row marginbottom0 marginbottom12"  ng-class="{'marginbottom0':editprofile}">
             <div class="col col-20 textcenter">
-                <img src="img/register-mail.png" width="45%">
+                <img src="img/profile/email.svg" class="profilelefticons" style="margin-top: -1px;">
             </div>
             <div class="col col-80 lightblackcolor fontsize13">
                 <p class="lightblackcolor displayinline phnumberdown" ng-if="!editprofile">mayur@ideamagix.com</p>
                 <div class="input-field margintop0 profileeditimput" ng-if="editprofile">
-                    <input id="email" type="email" class="validate marginbottom0">
-                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                    <input id="email" type="email" class="validate marginbottom0" placeholder="name@company.com">
                 </div>
                 <a class="button button-icon icon ion-edit lightblackcolor" ng-if="editprofile"></a>
             </div>
         </div>
 
-        <div class="row" ng-click="gotoquestionsasked()" ng-if="!editprofile">
+        <div class="row marginbottom0 marginbottom12" ng-click="gotoquestionsasked()" ng-if="!editprofile">
             <div class="col col-20 textcenter">
-                <img src="img/question-asked-color.png" width="45%">
+                <img src="img/profile/questionsasked.svg" class="profilelefticons">
             </div>
             <div class="col col-80 lightblackcolor fontsize13">Questions Asked</div>
         </div>
+        
+        <div class="row marginbottom0 marginbottom12" ng-if="!editprofile">
+            <div class="col col-20 textcenter">
+                <img src="img/profile/questionsleft.svg" class="profilelefticons" style="width: 30%;margin-top: -8px;">
+            </div>
+            <div class="col col-80 lightblackcolor fontsize13">Questions Left</div>
+        </div>
 
-        <div class="textcenter">
-            <a class="waves-effect waves-light btn primarybg marginauto" ng-if="editprofile" ng-click="changepassmodal()">Change Password</a>
+        <div class="row textcenter">
+            <a class="waves-effect waves-light btn primarybg marginauto boldbutton nouppercase" ng-if="editprofile" ng-click="changepassmodal()">Change Password</a>
         </div>
 
 

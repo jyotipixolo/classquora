@@ -1,5 +1,5 @@
 <ion-view view-title="Login">
-    <ion-header-bar align-title="left" class="bar-calm primarybg">
+    <ion-header-bar align-title="left" class="bar-calm loginbgcolor">
         <div class="buttons">
 
         </div>
@@ -11,49 +11,44 @@
 
     <ion-content class="has-header greybg loginbg">
 
-        <ion-tabs id="logintabs" class=" primarybg ">
+        <ion-tabs id="logintabs" class=" loginbgcolor ">
 
             <ion-tab title="Login">
 
                 <div class="row">
-                    <div class="col"></div>
-                    <div class="col col-90">
+                    <div class="col">
 
                         <div class="loginbox">
 
-                            <div class="row loginrow">
-                                <div class="col-10"></div>
-                                <div class="col-80">
+                            <div class="row loginrow marginbottom0">
+                                <div class="col">
                                     <form class="">
                                         <div class="input-field">
-                                            <i class="ion-android-call  prefix loginicon"></i>
-                                            <input id="icon_prefix" type="number" class="validate">
-                                            <label for="icon_prefix">Phone Number</label>
+                                            <i class="icon-login-phone-hollow  prefix"></i>
+                                            <input id="icon_prefix" type="number" class="validate loginprefixinput" placeholder="Phone">
                                         </div>
 
                                     </form>
                                 </div>
-                                <div class="col-10"></div>
 
                             </div>
                             <div class="row">
-                                <div class="col-10"></div>
-                                <div class="col-80">
+                                <div class="col">
                                     <form class="">
 
                                         <div class="input-field">
-                                            <i class="ion-ios-locked  prefix loginicon"></i>
-                                            <input id="icon_prefix" type="password" class="validate">
-                                            <label for="icon_prefix">Password</label>
+                                            <i class="icon-login-password prefix"></i>
+                                            <input id="icon_prefix" type="password" class="validate loginprefixinput" placeholder="Password">
                                         </div>
                                     </form>
                                 </div>
-                                <div class="col-10"></div>
                             </div>
 
                             <div class="row">
                                 <div class="col-10"></div>
-                                <div class="col-80 loginbut"><a class="waves-effect waves-light btn primarybg" style="width:100%;">Login</a></div>
+                                <div class="col-80">
+                                    <a class="waves-effect waves-light btn primarybg loginbutton">Log in</a>
+                                </div>
                                 <div class="col-10"></div>
                             </div>
                             <div class="textcenter forgottext">Forgot Password?</div>
@@ -70,7 +65,6 @@
 
                         </div>
                     </div>
-                    <div class="col"></div>
                 </div>
 
 
@@ -78,8 +72,7 @@
 
             <ion-tab title="Register" on-select="gotoregistertab()">
                 <div class="row">
-                    <div class="col"></div>
-                    <div class="col col-90">
+                    <div class="col">
 
                         <div class="loginbox loginboxregister z-depth-3">
 
@@ -88,13 +81,11 @@
                                     <img src="img/id-card-colored.png" width="80%" class="margintop25">
                                 </div>
                                 <div class="col">
-                                    <div class="input-field margintop0">
-                                        <input id="name" type="text" class="validate marginbottom0">
-                                        <label for="name">Name</label>
+                                    <div class="input-field margintop0" style="margin-top: 20px !important;">
+                                        <input id="name" type="text" class="validate marginbottom0 noshadow fontsize12" placeholder="Name">
                                     </div>
                                     <div class="input-field margintop10">
-                                        <input id="school" type="text" class="validate marginbottom0">
-                                        <label for="school">School</label>
+                                        <input id="school" type="text" class="validate marginbottom0 noshadow fontsize12" placeholder="School">
                                     </div>
                                 </div>
                                 <div class="col col-10"></div>
@@ -102,7 +93,7 @@
 
                             <div class="row marginbottom0">
                                 <div class="col col-20"></div>
-                                <div class="col col-70">
+                                <div class="col" style="margin-top:-5px">
                                     <div class="row marginbottom0">
                                         <div class="col col-50">
                                             <div class="regdrops">
@@ -118,39 +109,38 @@
                                         <div class="col col-50">
                                             <div class="regdrops">
                                                 <select>
-                                                    <option value="" disabled selected>Standard</option>
+                                                    <option value="" disabled selected>Board</option>
                                                     <option value="1">SSC</option>
                                                     <option value="2">CBSC</option>
-                                                    <option value="3">Gujrat</option>
+                                                    <option value="3">Gujarat</option>
                                                 </select>
                                                 <label>Board</label>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col col-10"></div>
                             </div>
 
-                            <div class="row marginbottom12">
+                            <div class="row marginbottom0">
                                 <div class="col col-20">
                                     <img src="img/register-phone.png" width="60%" class="margintop10">
                                 </div>
                                 <div class="col">
                                     <div class="input-field margintop0">
-                                        <input id="contact" type="text" class="validate marginbottom0">
-                                        <label for="contact">Phone Number</label>
+                                        <input id="contact" type="text" class="validate marginbottom0 noshadow fontsize12" placeholder="Phone">
                                     </div>
                                 </div>
                                 <div class="col col-10"></div>
                             </div>
 
-                            <div class="row marginbottom12">
+                            <div class="row marginbottom0">
                                 <div class="col col-20">
                                     <img src="img/register-mail.png" width="60%" class="margintop10">
                                 </div>
                                 <div class="col">
                                     <div class="input-field margintop0">
-                                        <input id="emailid" type="text" class="validate marginbottom0">
-                                        <label for="emailid">Email ID</label>
+                                        <input id="emailid" type="text" class="validate marginbottom0 noshadow fontsize12" placeholder="name@company.com">
                                     </div>
                                 </div>
                                 <div class="col col-10"></div>
@@ -162,12 +152,10 @@
                                 </div>
                                 <div class="col">
                                     <div class="input-field margintop0 textcenter">
-                                        <input id="password" type="text" class="validate marginbottom0 width65 marginauto">
-                                        <label for="password">Create Password</label>
+                                        <input id="password" type="text" class="validate marginbottom0 width65 marginauto textcenter" placeholder="Create Password">
                                     </div>
                                     <div class="input-field margintop10 textcenter">
-                                        <input id="confirmpassword" type="text" class="validate marginbottom0 width65 marginauto">
-                                        <label for="confirmpassword">Confirm Password</label>
+                                        <input id="confirmpassword" type="text" class="validate marginbottom0 width65 marginauto textcenter" placeholder="Confirm Password">
                                     </div>
                                 </div>
                                 <div class="col col-10"></div>
@@ -176,14 +164,13 @@
                             <div class="row margintop0">
                                 <div class="col col-10"></div>
                                 <div class="col col-80">
-                                    <a class="waves-effect waves-light btn primarybg width100 margintop3 ">Register</a>
+                                    <a class="waves-effect waves-light btn primarybg width100 margintop3 loginbutton">Register</a>
                                 </div>
                                 <div class="col col-10"></div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col"></div>
                 </div>
             </ion-tab>
 
@@ -191,16 +178,16 @@
 
 
 
-       
+
 
 
 
 
 
     </ion-content>
- <script>
-            $(document).ready(function () {
-                $('select').material_select();
-            });
-        </script>
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+    </script>
 </ion-view>

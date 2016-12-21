@@ -1,4 +1,4 @@
-<ion-side-menus enable-menu-with-back-views="false">
+<ion-side-menus enable-menu-with-back-views="true">
     <ion-side-menu-content>
 
         <ion-nav-view name="menuContent"></ion-nav-view>
@@ -7,7 +7,7 @@
     <ion-side-menu side="left">
 
         <ion-content class="lightgreybg">
-            <div class="menuprofile">
+            <div class="menuprofile" ng-click="gotoprofile()">
                 <div class="row marginbottom0">
                     <div class="col col-33">
                         <img src="img/teacher.png" width="100%">
@@ -47,7 +47,7 @@
 
                 <a class="item menu-close item-icon-left menutext">
                     <i class="icon icon-drawer-ask-a-questn menuicons fontsize17"></i> Questions Left
-                    <span class="badge badge-assertive">4</span>
+                    <span class="badge badge-assertive questionleftbadge">4</span>
                 </a>
 
                 <a class="item menu-close item-icon-left menutext" href="#/app/chatlist">
