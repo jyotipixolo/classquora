@@ -444,7 +444,158 @@ angular.module('starter.controllers', [])
     })
     .controller('paqCtrl', function ($scope, $stateParams) {})
     .controller('bookmarksCtrl', function ($scope, $stateParams) {})
-    .controller('askCtrl', function ($scope, $stateParams) {})
+    .controller('askCtrl', function ($scope, $stateParams) {
+
+        /*INITIALIZATIONS*/
+        $scope.subjects = [{
+            'id': '1',
+            'name': 'Physics',
+            'isactive': true,
+            'active': 'physics-active.png',
+            'inactive': 'physics.png',
+            'chapters': [
+                {
+                    'chapterid': 1,
+                    'chaptername': 'Chapter 1',
+                    'selected': false
+                },
+                {
+                    'chapterid': 2,
+                    'chaptername': 'Chapter 2',
+                    'selected': false
+                },
+                {
+                    'chapterid': 3,
+                    'chaptername': 'Chapter 3',
+                    'selected': false
+                },
+                {
+                    'chapterid': 4,
+                    'chaptername': 'Chapter 4',
+                    'selected': false
+                },
+                {
+                    'chapterid': 5,
+                    'chaptername': 'Chapter 5',
+                    'selected': false
+                }
+            ]
+    }, {
+            'id': '2',
+            'name': 'Chemistry',
+            'isactive': true,
+            'active': 'chemistry-active.png',
+            'inactive': 'chemistry.png',
+            'chapters': [
+                {
+                    'chapterid': 1,
+                    'chaptername': 'Chemistry 1',
+                    'selected': false
+                },
+                {
+                    'chapterid': 2,
+                    'chaptername': 'Chemistry 2',
+                    'selected': false
+                },
+                {
+                    'chapterid': 3,
+                    'chaptername': 'Chemistry 3',
+                    'selected': false
+                },
+                {
+                    'chapterid': 4,
+                    'chaptername': 'Chemistry 4',
+                    'selected': false
+                },
+                {
+                    'chapterid': 5,
+                    'chaptername': 'Chemistry 5',
+                    'selected': false
+                }
+            ]
+    }, {
+            'id': '3',
+            'name': 'Biology',
+            'isactive': true,
+            'active': 'biology-active.png',
+            'inactive': 'biology.png'
+    }, {
+            'id': '4',
+            'name': 'Maths',
+            'isactive': true,
+            'active': 'maths-active.png',
+            'inactive': 'maths.png'
+    }];
+
+
+
+        $scope.showchapters = false;
+        $scope.filterapplied = false;
+        $scope.selectedsubject = null;
+        $scope.dummychapterprefix = "";
+        $scope.allchapsbutton = true;
+
+        $scope.selectallchaps = function () {
+            for (var c = 0; c < $scope.chapters.length; c++) {
+                $scope.chapters[c].selected = true;
+            };
+            $scope.allchapsbutton = false;
+        };
+        $scope.addtochapfilter = function () {
+            $scope.allchapsbutton = false;
+            for (var c = 0; c < $scope.chapters.length; c++) {
+                if ($scope.chapters[c].selected == false) {
+                    $scope.allchapsbutton = true;
+                };
+            };
+        };
+
+        $scope.removefilters = function () {
+            $scope.showchapters = false;
+            $scope.selectedsubject = null;
+        };
+
+        $scope.selectsubject = function (index) {
+
+
+            if ($scope.showchapters) {
+                if ($scope.selectedsubject == index) {
+                    $scope.showchapters = false;
+                    $scope.selectedsubject = null;
+                } else {
+                    $scope.chapters = $scope.subjects[index].chapters;
+                    $scope.selectedsubject = index;
+                };
+            } else {
+                $scope.showchapters = true;
+
+                $scope.chapters = $scope.subjects[index].chapters;
+                $scope.selectedsubject = index;
+            };
+
+
+
+
+
+            for (var s = 0; s < $scope.subjects.length; s++) {
+
+            };
+
+
+
+            $scope.subjects[index].isactive = true;
+
+            /*get chapters*/
+            var getchapterssuccess = function (data, status) {
+                $scope.chapters = data;
+            };
+            var getchapterserror = function (data, status) {
+                $scope.chapters = data;
+            };
+            //$scope.getchapters($scope.subjects[index].id).success(getchapterssuccess).error(getchapterserror);
+        };
+
+    })
     .controller('filterCtrl', function ($scope, $stateParams) {})
     .controller('chatlistCtrl', function ($scope, $stateParams) {})
 
